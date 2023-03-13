@@ -6,6 +6,6 @@ const boardGamesApi = axios.create({
 
 export const getReviews = () => {
   return boardGamesApi.get("/reviews").then(({ data }) => {
-    console.log(data);
+    return data
   });
 };

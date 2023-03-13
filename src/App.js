@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/Header";
-import { ReviewCard } from "./components/ReviewCard";
+import { Reviews } from './components/Reviews/Reviews';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route element={<ReviewCard />} />
+        <Route element={<Reviews />} path="/" />
       </Routes>
     </div>
   );
