@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { getReviewById } from "../../utils.js/apiCalls";
+import { getReviewById, patchReviewVotes } from "../../utils.js/apiCalls";
 import { useParams } from "react-router-dom";
 import "./SingleReview.css";
 import { Comments } from "../comments/Comments";
@@ -9,6 +9,7 @@ export const SingularReview = () => {
   const [singularReview, setSingularReview] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const { review_id } = useParams();
+  const [voteButton, setVoteButton] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -17,6 +18,32 @@ export const SingularReview = () => {
       setIsLoading(false);
     });
   }, []);
+
+  const upVote = (review_id) => {
+    if (voteButton === false) {
+      setVoteButton(true);
+      setSingularReview((currentReview) => {
+        return { ...currentReview, votes: currentReview.votes + 1 };
+      });
+      patchReviewVotes(review_id, 1).catch(() => {
+        setVoteButton(false);
+        setSingularReview((currentReview) => {
+          return { ...currentReview, votes: currentReview.votes - 1 };
+        });
+      });
+    } else {
+      setVoteButton(false)
+      setSingularReview((currentReview) => {
+        return { ...currentReview, votes: currentReview.votes - 1 };
+      });
+      patchReviewVotes(review_id, -1).catch(() => {
+        setVoteButton(true)
+        setSingularReview((currentReview) => {
+          return { ...currentReview, votes: currentReview.votes + 1 };
+        });
+      });
+    }
+  };
   
   return (
     <section className="review-box">
@@ -36,11 +63,11 @@ export const SingularReview = () => {
           <p className="date">on {singularReview.created_at}</p>
           <p className="vote-button">
             {singularReview.votes}
-            <button>
+            <button onClick={() => upVote(singularReview.review_id)}>
               <span aria-label="votes for this review">❤️</span>
             </button>
           </p>
-          <Comments review_id={review_id}/>
+          <Comments review_id={review_id} />
         </section>
       )}
     </section>

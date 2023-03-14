@@ -23,3 +23,11 @@ export const getCommentFromReview = (review_id) => {
       return data;
     });
 };
+
+export const patchReviewVotes = (review_id, vote) => {
+  return boardGamesApi
+    .patch(`/reviews/${review_id}`, { inc_votes: vote })
+    .then(({ data }) => {
+      return data.review;
+    });
+};

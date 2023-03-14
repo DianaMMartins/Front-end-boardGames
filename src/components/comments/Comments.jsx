@@ -5,8 +5,6 @@ import { SingularComment } from './SingularComment';
 
 export const Comments = ( {review_id} ) => {
   const [comments, setComments] = useState([]);
-
-  console.log(review_id);
   useEffect(() => {
     getCommentFromReview(review_id).then((comments) => {
       setComments(comments.comments);
