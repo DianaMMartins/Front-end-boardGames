@@ -1,0 +1,10 @@
+section .review-box{
+    display: flex;
+    width: 500vw;
+    background-color: aqua;
+}
+
+p {
+text-align: justify;
+margin: 5vh 16vw;
+}

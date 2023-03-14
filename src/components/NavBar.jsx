@@ -1,8 +1,8 @@
 export const NavBar = () => {
   return (
   <nav className="Nav">
-    <p>1</p>
-    <p>2</p>
+    <p>This will lead to reviews</p>
+    <p>this will lead to ...</p>
   </nav>
   )
 };
