@@ -1,9 +1,9 @@
-//will need a Link to=' /reviews/review_id'
 import { useEffect } from "react";
 import { useState } from "react";
 import { getReviewById } from "../../utils.js/apiCalls";
 import { useParams } from "react-router-dom";
 import "./SingleReview.css";
+import { Comments } from "../comments/Comments";
 
 export const SingularReview = () => {
   const [singularReview, setSingularReview] = useState({});
@@ -17,7 +17,7 @@ export const SingularReview = () => {
       setIsLoading(false);
     });
   }, []);
-
+  
   return (
     <section className="review-box">
       <h2 className="review">{singularReview.title}</h2>
@@ -33,13 +33,14 @@ export const SingularReview = () => {
           <img src={singularReview.review_img_url} alt="review" />
           <p className="review-body">{singularReview.review_body}</p>
           <p className="review-writer">Written by: {singularReview.owner}</p>
-          <p className="date">on: {singularReview.created_at}</p>
+          <p className="date">on {singularReview.created_at}</p>
           <p className="vote-button">
             {singularReview.votes}
             <button>
               <span aria-label="votes for this review">❤️</span>
             </button>
           </p>
+          <Comments review_id={review_id}/>
         </section>
       )}
     </section>
