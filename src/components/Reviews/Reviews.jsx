@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../../utils.js/apiCalls";
 import { ReviewCard } from "./ReviewCard";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);

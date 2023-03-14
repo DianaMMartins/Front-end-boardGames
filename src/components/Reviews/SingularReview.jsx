@@ -28,7 +28,7 @@ export const SingularReview = () => {
           width="250vw"
         />
       ) : (
-        <section><h3>Designed by: {singularReview.designer}</h3><img src={singularReview.review_img_url} alt="review picture" />
+        <section><h3>Designed by: {singularReview.designer}</h3><img src={singularReview.review_img_url} alt="review" />
         <p className="review-body">{singularReview.review_body}</p>
         <p className="review-writer">Written by: {singularReview.owner}</p>
         <p className="date">on: {singularReview.created_at}</p>
