@@ -4,5 +4,8 @@ import { useState } from "react";
 export const UserContext = createContext();
 export const UserProvider = (props) => {
     const [user, setUser] = useState({username: ''})
-    return <UserContext.Provider>{props.children}</UserContext.Provider>
+    const logout = () => {
+        setUser(null);
+    }
+    return <UserContext.Provider value={{user, setUser, logout}}>{props.children}</UserContext.Provider>
 }

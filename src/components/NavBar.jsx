@@ -1,5 +1,4 @@
-import { Link, Route, Routes } from "react-router-dom";
-import { Users } from "./users/Users";
+import { Link } from "react-router-dom";
 
 export const NavBar = () => {
   return (
@@ -8,7 +7,7 @@ export const NavBar = () => {
     <p>This will lead to reviews</p>
     </Link>
     <Link to={`/users`}>
-    <p>this will lead to login users</p>
+    <p>This will lead to login users</p>
     </Link>
   </nav>
   )

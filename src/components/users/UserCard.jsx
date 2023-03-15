@@ -4,7 +4,7 @@ export const UserCard = ({ eachUser }) => {
       <h3>{eachUser.name}</h3>
       <img src={eachUser.avatar_url} alt="avatar" width="150vw" />
       <p>
-        <button className="sign-in">Sign in</button>
+        <button className="sign-in" >Sign in</button>
       </p>
     </li>
   );
