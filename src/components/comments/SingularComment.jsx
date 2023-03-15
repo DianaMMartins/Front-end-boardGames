@@ -1,7 +1,6 @@
 import './SingularComment.css';
 
 export const SingularComment = ({eachComment}) => {
-    console.log(eachComment);
     
     return (
         <li className="singular-comment">

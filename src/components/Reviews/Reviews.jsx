@@ -29,7 +29,7 @@ export const Reviews = () => {
           {reviews.map((eachReview) => {
             return (
               <Link to={`/reviews/${eachReview.review_id}`} key={eachReview.review_id}>
-                <ReviewCard eachReview={eachReview} />;
+                <ReviewCard eachReview={eachReview} />
               </Link>
             );
           })}
