@@ -9,6 +9,11 @@ export const getReviews = () => {
     return data;
   });
 };
+export const getUsers = () => {
+  return boardGamesApi.get("/users").then(({ data }) => {
+    return data;
+  });
+};
 
 export const getReviewById = (review_id) => {
   return boardGamesApi.get(`/reviews/${review_id}`).then(({ data }) => {
