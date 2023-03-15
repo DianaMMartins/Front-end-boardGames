@@ -11,7 +11,7 @@ export const UserCard = ({ eachUser }) => {
       <img src={eachUser.avatar_url} alt="avatar" width="150vw" />
       <p>
         <button className="sign-in" onClick={()=>{
-          setUser(eachUser.name)
+          setUser(eachUser.username)
         }}>Sign in</button>
       </p>
     </li>

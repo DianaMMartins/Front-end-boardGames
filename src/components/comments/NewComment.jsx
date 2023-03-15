@@ -1,31 +1,29 @@
 import { useState } from "react";
 import { postCommentToReview } from "../../utils.js/apiCalls";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/Users";
 
-//review id comes from
-export const NewComment = (review_id) => {
+export const NewComment = ( {review_id },  setComments ) => {
   const [newComment, setNewComment] = useState("");
-  const [username, setUsername] = useState("");
+  const { user } = useContext(UserContext);
   const commentToPost = {
-      body: newComment,
-      username: username
-  }
-
-  console.log(commentToPost, review_id);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    postCommentToReview(review_id, commentToPost);
+    body: newComment,
+    username: user,
   };
 
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    postCommentToReview(review_id, commentToPost).then((commentFromApi) => {
+      setComments((currentComments) => {
+        console.log(currentComments, 'hi ');
+        return [commentFromApi, ...currentComments]
+      })
+    });
+  };
 
   return (
     <form className="post-comment" onSubmit={handleSubmit}>
-    <label htmlFor="new-username">Post as:</label>
-      <textarea
-        id="new-username"
-        onChange={(event) => setUsername(event.target.value)}
-      />
-            <label htmlFor="new-comment">Comments</label>
+      <label htmlFor="new-comment">Comments</label>
       <textarea
         id="new-comment"
         value={newComment}
