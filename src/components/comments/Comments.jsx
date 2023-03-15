@@ -1,11 +1,32 @@
-// get comments based on review_id
+import { getCommentFromReview } from "../../utils.js/apiCalls";
+import { useState } from "react";
+import { useEffect } from "react";
+import { SingularComment } from './SingularComment';
+import { NewComment } from "./NewComment";
 
-//on singular review display comments from that review_id
+export const Comments = ( {review_id} ) => {
+  const [comments, setComments] = useState([]);
+  
+  useEffect(() => {
+    getCommentFromReview(review_id).then((comments) => {
+      setComments(comments.comments);
+    });
+  }, []);
 
-// const comment = [{
-//     body: 'My dog loved this game too!',
-//     votes: 3,
-//     author: 'tickle122',
-//     review_id: 4,
-//     created_at: new Date(1610964545410),
-//   }]
+  return (
+    <section className="comments">
+      <h4>Comment section</h4>
+      <NewComment review_id={review_id}/>
+      <ul className="comments-list">
+        {
+        (comments.length > 0) ?
+        comments.map((eachComment) => {
+          return (
+            <SingularComment eachComment={eachComment} key={eachComment.comment_id} />
+          );
+        }) : <p> No comments found ... </p>
+    }
+      </ul>
+    </section>
+  );
+};
