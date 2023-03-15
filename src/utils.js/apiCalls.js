@@ -15,3 +15,9 @@ export const getReviewById = (review_id) => {
     return data;
   });
 };
+
+export const postCommentToReview = (review_id, newComment) => {
+  return boardGamesApi.post(`/reviews/${review_id}/comments`, { key: newComment}).then((commentFromApi)=>{
+    console.log(commentFromApi);
+  })
+}
