@@ -43,17 +43,6 @@ export const patchReviewVotes = (review_id, vote) => {
     });
 };
 
-
-
-
-
-
-
-
-
-
-
-
 export const getCategories = () => {
   return boardGamesApi
     .get(`/categories`)
