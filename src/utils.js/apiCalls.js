@@ -23,7 +23,7 @@ export const getReviewById = (review_id) => {
 
 export const postCommentToReview = (review_id, newComment) => {
   return boardGamesApi.post(`/reviews/${review_id}/comments`, newComment).then(({ data }) =>{
-    return data.body;
+    return data;
   })
 }
 

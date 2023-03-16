@@ -3,8 +3,6 @@ import { UserContext } from "../../contexts/Users";
 
 export const UserCard = ({ eachUser }) => {
   const { user, setUser } = useContext(UserContext);
-  console.log(user);
-
   return (
     <li className="user-li" key={eachUser.name}>
       <h3>{eachUser.name}</h3>

@@ -3,7 +3,7 @@ import { postCommentToReview } from "../../utils.js/apiCalls";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/Users";
 
-export const NewComment = ( {review_id },  setComments ) => {
+export const NewComment = ( {review_id, setComments} ) => {
   const [newComment, setNewComment] = useState("");
   const { user } = useContext(UserContext);
   const commentToPost = {
@@ -13,10 +13,9 @@ export const NewComment = ( {review_id },  setComments ) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    postCommentToReview(review_id, commentToPost).then((commentFromApi) => {
+    postCommentToReview(review_id, commentToPost).then(({comment}) => {
       setComments((currentComments) => {
-        console.log(currentComments, 'hi ');
-        return [commentFromApi, ...currentComments]
+        return [comment, ...currentComments]
       })
     });
   };
