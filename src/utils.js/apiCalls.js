@@ -38,3 +38,22 @@ export const patchReviewVotes = (review_id, vote) => {
       return data.review;
     });
 };
+
+
+
+
+
+
+
+
+
+
+
+
+export const getCategories = () => {
+  return boardGamesApi
+    .get(`/categories`)
+    .then(({ data }) => {
+      return data;
+    });
+}
