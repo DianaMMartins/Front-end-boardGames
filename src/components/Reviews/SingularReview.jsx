@@ -60,7 +60,7 @@ export const SingularReview = () => {
           <img src={singularReview.review_img_url} alt="review" />
           <p className="review-body">{singularReview.review_body}</p>
           <p className="review-writer">Written by: {singularReview.owner}</p>
-          <p className="date">on {singularReview.created_at}</p>
+          <p className="date">on {new Date(singularReview.created_at).toDateString()}</p>
           <p className="vote-button">
             {singularReview.votes}
             <button onClick={() => upVote(singularReview.review_id)}>

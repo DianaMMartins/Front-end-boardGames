@@ -4,7 +4,9 @@ export const SingularComment = ({eachComment}) => {
     
     return (
         <li className="singular-comment">
-           <p>{eachComment.author} {eachComment.created_at}</p>
+          {/* add a Link to user page */}
+           <p>Posted by {eachComment.author}</p>
+           <p>on {new Date(eachComment.created_at).toDateString()}</p>
            <p>{eachComment.body}</p> 
            <p className="vote-button">
             {eachComment.votes}
