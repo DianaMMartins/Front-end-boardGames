@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getCategories } from "../../utils.js/apiCalls";
 import { CategoryCard } from "./categoryCard";
 
+//displays all category cards that exist
 export const Categories = () => {
   const [categories, setCategories] = useState([]);
 
