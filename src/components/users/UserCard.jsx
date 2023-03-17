@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/Users";
 
 export const UserCard = ({ eachUser }) => {
-  const { user, setUser } = useContext(UserContext);
+  const {  setUser } = useContext(UserContext);
   
   return (
     <li className="user-li" key={eachUser.name}>
