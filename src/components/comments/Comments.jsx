@@ -1,6 +1,5 @@
 import { getCommentFromReview } from "../../utils.js/apiCalls";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { SingularComment } from './SingularComment';
 import { NewComment } from "./NewComment";
 

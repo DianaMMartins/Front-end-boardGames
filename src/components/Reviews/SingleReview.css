@@ -1,8 +1,7 @@
-section .review-box{
+/* section .review-box{
     display: flex;
-    width: 500vw;
-    background-color: aqua;
-}
+    width: 250vw;
+} */
 
 p {
 text-align: justify;

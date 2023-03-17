@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { getReviewById, patchReviewVotes } from "../../utils.js/apiCalls";
+import {
+  getReviewByParametric,
+  patchReviewVotes,
+} from "../../utils.js/apiCalls";
 import { useParams } from "react-router-dom";
 import "./SingleReview.css";
 import { Comments } from "../comments/Comments";
@@ -13,7 +16,7 @@ export const SingularReview = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getReviewById(review_id).then((eachReview) => {
+    getReviewByParametric(review_id).then((eachReview) => {
       setSingularReview(eachReview.review);
       setIsLoading(false);
     });
@@ -23,6 +26,7 @@ export const SingularReview = () => {
     if (voteButton === false) {
       setVoteButton(true);
       setSingularReview((currentReview) => {
+        console.log(currentReview);
         return { ...currentReview, votes: currentReview.votes + 1 };
       });
       patchReviewVotes(review_id, 1).catch(() => {
@@ -32,19 +36,19 @@ export const SingularReview = () => {
         });
       });
     } else {
-      setVoteButton(false)
+      setVoteButton(false);
       setSingularReview((currentReview) => {
         return { ...currentReview, votes: currentReview.votes - 1 };
       });
       patchReviewVotes(review_id, -1).catch(() => {
-        setVoteButton(true)
+        setVoteButton(true);
         setSingularReview((currentReview) => {
           return { ...currentReview, votes: currentReview.votes + 1 };
         });
       });
     }
   };
-  
+
   return (
     <section className="review-box">
       <h2 className="review">{singularReview.title}</h2>
@@ -60,7 +64,9 @@ export const SingularReview = () => {
           <img src={singularReview.review_img_url} alt="review" />
           <p className="review-body">{singularReview.review_body}</p>
           <p className="review-writer">Written by: {singularReview.owner}</p>
-          <p className="date">on {singularReview.created_at}</p>
+          <p className="date">
+            on {new Date(singularReview.created_at).toDateString()}
+          </p>
           <p className="vote-button">
             {singularReview.votes}
             <button onClick={() => upVote(singularReview.review_id)}>
