@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getCategories } from "../../utils.js/apiCalls";
 import { CategoryCard } from "./CategoryCard";
+import { CategoryPage } from "./CategoryPage";
 
 //displays all category cards that exist
 export const Categories = () => {
@@ -36,14 +37,9 @@ export const Categories = () => {
               category: eachCategory,
             };
             return (
-              <Link
-                to={`/categories/${eachCategory.slug}`}
-                state={{ title: title }}
-                className="Link"
-                key={eachCategory.slug}
-              >
-                <CategoryCard eachCategory={eachCategory} />
-              </Link>
+              
+                <CategoryCard eachCategory={eachCategory}                 key={eachCategory.slug}
+/>
             );
           })}
         </ul>

@@ -1,29 +1,27 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { getReviewByParametric } from "../../utils.js/apiCalls";
 import { ReviewCard } from "../Reviews/ReviewCard";
+import { useParams } from "react-router-dom";
 
 export const CategoryPage = () => {
+  const { category_slug } = useParams();
   const [category, setCategory] = useState("");
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const location = useLocation();
-  const { title } = location.state.title;
-  const categoryObj = location.state.title.category;
 
   useEffect(() => {
     setIsLoading(true);
-    setCategory(categoryObj.slug);
-      getReviewByParametric(category).then((reviewsFromApi) => {
-        setReviews(reviewsFromApi)
-        setIsLoading(false);
-      });
-  }, [category, categoryObj.slug]);
+    setCategory(category_slug);
+    getReviewByParametric(category).then((reviewsFromApi) => {
+      setReviews(reviewsFromApi);
+      setIsLoading(false);
+    });
+  }, [category, category_slug]);
 
   return (
     <section className="category-page">
-      <h3> {title}</h3>
+      <h3> Category</h3>
       <h4>Reviews</h4>
       {isLoading ? (
         <img
@@ -34,8 +32,10 @@ export const CategoryPage = () => {
       ) : (
         <ul className="review-box">
           hi
-          {reviews.map(eachReview => {
-            return <ReviewCard eachReview={eachReview} key={eachReview.review_id}/>
+          {reviews.map((eachReview) => {
+            return (
+              <ReviewCard eachReview={eachReview} key={eachReview.review_id} />
+            );
           })}
         </ul>
       )}

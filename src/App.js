@@ -24,7 +24,7 @@ function App() {
         <Route path="/reviews/:review_id" element={<SingularReview />} />
         <Route path="/users" element={<Users />} />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/categories/:category_id" element={<CategoryPage />} />
+        <Route path="/categories/:category_slug" element={<CategoryPage />} />
         <Route
           path="/*"
           element={
