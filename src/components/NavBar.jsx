@@ -12,7 +12,7 @@ export const NavBar = () => {
 
     {/* if logged in display log out, if not logged in display log in */}
     <Link to={`/users`} className='Link'>
-    <p>This will lead to login users</p>
+    <p>Login</p>
     </Link>
   </nav>
   )

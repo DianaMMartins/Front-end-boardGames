@@ -9,6 +9,7 @@ import { Users } from "./components/users/Users";
 import { UserContext } from "./contexts/Users";
 import { LoggedIn } from "./components/users/LoggedIn";
 import { Categories } from "./components/categories/Categories";
+import { CategoryPage } from './components/categories/CategoryPage';
 
 function App() {
   const { user } = useContext(UserContext);
@@ -19,11 +20,11 @@ function App() {
       {user.length > 0 ? <LoggedIn /> : <Link to={"/users"}>Log in</Link>}
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/reviews/:review_id" element={<SingularReview />} />
         <Route path="/reviews" element={<Reviews />} />
+        <Route path="/reviews/:review_id" element={<SingularReview />} />
         <Route path="/users" element={<Users />} />
         <Route path="/categories" element={<Categories />} />
-        {/* <Route path="/categories/:category_id" element={<Categories />} /> */}
+        <Route path="/categories/:category_id" element={<CategoryPage />} />
         <Route
           path="/*"
           element={
