@@ -11,7 +11,7 @@ export const Comments = ( {review_id} ) => {
     getCommentFromReview(review_id).then((comments) => {
       setComments(comments.comments);
     });
-  }, []);
+  }, [review_id]);
 
   return (
     <section className="comments">

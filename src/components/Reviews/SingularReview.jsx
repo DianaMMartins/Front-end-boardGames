@@ -17,7 +17,7 @@ export const SingularReview = () => {
       setSingularReview(eachReview.review);
       setIsLoading(false);
     });
-  }, []);
+  }, [review_id]);
 
   const upVote = (review_id) => {
     if (voteButton === false) {
