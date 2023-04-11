@@ -1,5 +1,6 @@
 import { NavBar } from "./NavBar";
 import diceLogo from '../images/dice-logo-color.png'
+import './Header.css'
 
 export const Header = () => {
   return (

@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import './NavBar.css'
 
 export const NavBar = () => {
   return (
-  <nav className="Nav">
+  <nav className="nav">
     <Link to={`/reviews`} className='Link'>
     <p>Reviews</p>
     </Link>

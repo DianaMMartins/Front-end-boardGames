@@ -1,3 +1,54 @@
+:root {
+  --mint: #d2f3e0;
+  --berry: #feb9c8;
+  --darkberry: #f6a7ba;
+  --lightmint: #f5fbf1;
+}
+
 .App {
   text-align: center;
 }
+
+.review-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 34px;
+  gap: 20px;
+}
+
+.review-card {
+  width: 300px;
+  height: 300px;
+  border: 4mm ridge var(--darkberry);
+}
+
+.review-card img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.review-card .game-title{
+  color: transparent;
+  padding: 25px;
+  text-align: center;
+}
+
+.review-card .category{
+  color: transparent;
+  padding: 25px;
+  text-align: center;
+}
+
+.review-card:hover {
+  width: 500px;
+  height: 500px;
+  background-color: aqua;
+  color: black;
+}
+
+/* hide h3 and p when not on hover
+ */

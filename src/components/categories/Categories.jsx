@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getCategories } from "../../utils.js/apiCalls";
 import { CategoryCard } from "./CategoryCard";
+import './Categories.css'
 
 //displays all category cards that exist
 export const Categories = () => {

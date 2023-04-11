@@ -2,8 +2,13 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/Users";
 
 export const UserCard = ({ eachUser }) => {
-  const {  setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   
+  console.log(user);
+   //check if user is logged in
+  //display different page depending on if logged in or not
+
+
   return (
     <li className="user-li" key={eachUser.name}>
       <h3>{eachUser.name}</h3>

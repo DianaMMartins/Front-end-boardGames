@@ -15,6 +15,7 @@ export const Reviews = () => {
     });
   }, []);
 
+  //limit to display only 10 reviews
   return (
     <section className="reviews">
       <h2>Reviews</h2>
@@ -25,7 +26,7 @@ export const Reviews = () => {
           width="250vw"
         />
       ) : (
-        <ul>
+        <ul className="review-container">
           {reviews.map((eachReview) => {
             return (
               <Link to={`/reviews/${eachReview.review_id}`} key={eachReview.review_id}>
