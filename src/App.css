@@ -1,8 +1,13 @@
 :root {
   --mint: #d2f3e0;
-  --berry: #feb9c8;
-  --darkberry: #f6a7ba;
   --lightmint: #f5fbf1;
+  --peach: #ffabab;
+  --berry: #feb9c8;
+  --darkberry: #d14d72;
+}
+
+body {
+  background-image: url("./images/background.avif");
 }
 
 .App {
@@ -12,9 +17,10 @@
 h2 {
   margin: 25px auto;
   color: var(--berry);
-  font-family: 'Rubik Pixels', cursive;
+  font-family: "Rubik Pixels", cursive;
   font-size: 62px;
-  text-shadow: -1px 0 var(--darkberry), 0 1px var(--darkberry), 1px 0 var(--darkberry), 0 -1px var(--darkberry);
+  text-shadow: -1px 0 var(--darkberry), 0 1px var(--darkberry),
+    1px 0 var(--darkberry), 0 -1px var(--darkberry);
 }
 
 .review-container {
@@ -25,7 +31,6 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 20px 10px;
-  /* border: 2mm solid black; */
 }
 
 .review-card {
@@ -33,6 +38,9 @@ h2 {
   height: 450px;
   border: 4mm ridge var(--darkberry);
   overflow: hidden;
+  background-color: var(--berry);
+  color: black;
+  text-decoration: none;
 }
 
 .game-title {
@@ -50,4 +58,21 @@ h2 {
 
 .review-card:hover img {
   transform: scale(2);
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }

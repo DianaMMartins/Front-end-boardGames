@@ -7,7 +7,9 @@ import { SingularReview } from "./components/Reviews/SingularReview";
 import { Homepage } from "./components/Homepage";
 import { Users } from "./components/users/Users";
 import { UserContext } from "./contexts/Users";
-import { LoggedIn } from './components/users/LoggedIn';
+import { LoggedIn } from "./components/users/LoggedIn";
+import { Categories } from "./components/categories/Categories";
+import { CategoryPage } from "./components/categories/CategoryPage";
 
 function App() {
   const { user } = useContext(UserContext);
@@ -15,11 +17,28 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {(user.length > 0) ? <LoggedIn /> : 
+      {user.length > 0 ? <LoggedIn /> : <Link to={"/users"}></Link>}
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/reviews/:review_id" element={<SingularReview />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/categories/:category_slug" element={<CategoryPage />} />
+        <Route
+          path="/*"
+          element={
+            <section>
+              <h2>No page found! Keep looking ...</h2>
+              <img
+                src={require(`./images/missing.gif`)}
+                alt="loading"
+                width="250vw"
+              />
+            </section>
+          }
+        />
       </Routes>
-      }
     </div>
   );
 }
