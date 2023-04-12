@@ -9,46 +9,45 @@
   text-align: center;
 }
 
+h2 {
+  margin: 25px auto;
+  color: var(--berry);
+  font-family: 'Rubik Pixels', cursive;
+  font-size: 62px;
+  text-shadow: -1px 0 var(--darkberry), 0 1px var(--darkberry), 1px 0 var(--darkberry), 0 -1px var(--darkberry);
+}
+
 .review-container {
+  margin: auto;
+  padding-left: 0px;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: center;
-  padding-top: 34px;
-  gap: 20px;
+  gap: 20px 10px;
+  /* border: 2mm solid black; */
 }
 
 .review-card {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 450px;
   border: 4mm ridge var(--darkberry);
+  overflow: hidden;
+}
+
+.game-title {
+  padding: 0px 10px;
 }
 
 .review-card img {
+  padding: 0px;
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   height: 300px;
   object-fit: cover;
+  transition: transform 0.2s;
 }
 
-.review-card .game-title{
-  color: transparent;
-  padding: 25px;
-  text-align: center;
+.review-card:hover img {
+  transform: scale(2);
 }
-
-.review-card .category{
-  color: transparent;
-  padding: 25px;
-  text-align: center;
-}
-
-.review-card:hover {
-  width: 500px;
-  height: 500px;
-  background-color: aqua;
-  color: black;
-}
-
-/* hide h3 and p when not on hover
- */
