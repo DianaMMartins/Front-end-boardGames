@@ -5,12 +5,12 @@ import { HomepageCategories } from "./categories/HomepageCategories";
 export const Homepage = () => {
   return (
     <section className="homepage">
-      <section className="homepage-categories">
-        <HomepageCategories />
+      <HomepageCategories />
+      {/* <section className="homepage-categories">
       </section>
       <section className="homepage-reviews">
         <HomepageReviews />
-      </section>
+      </section> */}
     </section>
   );
 };

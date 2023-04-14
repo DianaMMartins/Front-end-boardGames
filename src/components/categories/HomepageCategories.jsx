@@ -14,22 +14,28 @@ export const HomepageCategories = () => {
     });
   }, []);
 
-  const homeCategories = [];
-  if (categories.length) {
-    let categoriesCounter = 0;
-    const noRepeats = [];
-    while (categoriesCounter < 4) {
-      let random = Math.ceil(Math.random() * categories.length);
-      if (!noRepeats.includes(random)) {
-        noRepeats.push(random);
-        categoriesCounter++;
-        const eachCategory = categories[random];
-        homeCategories.push(eachCategory);
+  const getHomeCategories = () => {
+    const homeCategories = [];
+
+    if (categories.length) {
+      let categoriesCounter = 0;
+      const noRepeats = [];
+
+      while (categoriesCounter < 4) {
+        let random = Math.ceil(Math.random() * categories.length);
+        if (!noRepeats.includes(random)) {
+          noRepeats.push(random);
+          categoriesCounter++;
+          const eachCategory = categories[random];
+          homeCategories.push(eachCategory)
+        }
       }
-      console.log(homeCategories, random);
+      // console.log(homeCategories, noRepeats);
     }
-  }
-  console.log(categories);
+    return homeCategories;
+  };
+
+  // console.log(getHomeCategories(), categories);
 
   return (
     <section className="categories">
@@ -42,17 +48,19 @@ export const HomepageCategories = () => {
           width="250vw"
         />
       ) : (
-        <ul className="categories-list">
-          {homeCategories.map((eachCategory) => {
-            return (
-              <CategoryCard
-                eachCategory={eachCategory}
-                key={eachCategory.slug}
-              />
-            );
-          })}
-        </ul>
-      )}
+        // <ul className="categories-list">
+        //   {getHomeCategories().map((eachCategory) => {
+        //     return (
+        //       <CategoryCard
+        //         eachCategory={eachCategory}
+        //         key={eachCategory.slug}
+        //       />
+        //     );
+        //   })}
+        // </ul>
+      <p>hello</p>
+        )
+      }
     </section>
   );
 };

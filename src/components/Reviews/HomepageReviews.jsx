@@ -43,7 +43,6 @@ export const HomepageReviews = () => {
         />
       ) : (
         <section>
-
         <ul className="review-container">
           {homeReviews.map((eachReview) => {
             return (

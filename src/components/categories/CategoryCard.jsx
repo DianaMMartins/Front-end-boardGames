@@ -11,7 +11,10 @@ export const CategoryCard = ({ eachCategory }) => {
   return (
     <li key={eachCategory.slug}>
       <Link to={`/categories/${eachCategory.slug}`} className="Link">
-        <h4 className="category-name">{improveTitle(eachCategory.slug)}</h4>
+        <section className="each-category">
+          <img src={eachCategory.img} alt='category'/>
+          <h4 className="category-name">{improveTitle(eachCategory.slug)}</h4>
+        </section>
       </Link>
     </li>
   );

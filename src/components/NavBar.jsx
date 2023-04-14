@@ -10,7 +10,6 @@ export const NavBar = () => {
     <Link to={`/categories`} className='Link'>
     <p>Categories</p>
     </Link>
-
     {/* if logged in display log out, if not logged in display log in */}
     <Link to={`/users`} className='Link'>
     <p>Login</p>
