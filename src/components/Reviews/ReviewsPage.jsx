@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { getReviews } from "../../utils.js/apiCalls";
 import { ReviewCard } from "./ReviewCard";
 import { Link } from "react-router-dom";
+import "./ReviewsPage.css";
 
-export const Reviews = () => {
+export const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -15,12 +16,12 @@ export const Reviews = () => {
     });
   }, []);
 
-  //limit to display only 10 reviews
   return (
     <section className="reviews">
       <h2>Reviews</h2>
       {isLoading ? (
         <img
+          id="loading"
           src={require(`../../images/loading.gif`)}
           alt="loading"
           width="250vw"

@@ -1,3 +1,4 @@
+import './ReviewCard.css'
 export const ReviewCard = ({ eachReview }) => {
   return (
   

@@ -25,6 +25,7 @@ export const CategoryPage = () => {
       <h4>Reviews</h4>
       {isLoading ? (
         <img
+          id="loading"
           src={require(`../../images/loading.gif`)}
           alt="loading"
           width="250vw"

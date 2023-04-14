@@ -1,0 +1,23 @@
+.reviews{
+    width: 100%;
+    margin: 0px 0px 120px 0px;
+}
+
+.review-container {
+    margin: auto;
+    padding-left: 0px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px 10px;
+}
+
+.reviews h2 {
+    position: relative;
+    margin: 22px auto;
+    color: var(--darkberry);
+    font-size: 62px;
+    text-shadow: -1px 0 var(--berry), 0 1px var(--berry), 1px 0 var(--berry),
+      0 -1px var(--berry);
+  }

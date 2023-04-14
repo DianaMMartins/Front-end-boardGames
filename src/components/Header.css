@@ -1,3 +1,27 @@
-header {
-    background: var(--berry);
-}
+.header {
+    margin: 0px;
+    border: 2mm solid var(--darkberry);
+    display: flex;
+    justify-content: center;
+    background-color: var(--mint);
+  }
+  
+  .header h1 {
+    color: var(--berry);
+    font-family: var(--headerfont);
+    font-size: 48px;
+    text-shadow: -1px 0 var(--darkberry), 0 1px var(--darkberry),
+      1px 0 var(--darkberry), 0 -1px var(--darkberry);
+  }
+  
+  .header.site-link {
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    margin: 10px;
+  }
+  
+  .header img {
+    width: 80px;
+    height: auto;
+  }

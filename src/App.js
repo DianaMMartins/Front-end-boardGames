@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/Header";
-import { Reviews } from "./components/Reviews/Reviews";
+import { ReviewsPage } from "./components/Reviews/ReviewsPage";
 import { SingularReview } from "./components/Reviews/SingularReview";
 import { Homepage } from "./components/Homepage";
 import { Users } from "./components/users/Users";
@@ -20,7 +20,7 @@ function App() {
       {user.length > 0 ? <LoggedIn /> : <Link to={"/users"}></Link>}
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/reviews/:review_id" element={<SingularReview />} />
         <Route path="/users" element={<Users />} />
         <Route path="/categories" element={<Categories />} />
@@ -31,6 +31,7 @@ function App() {
             <section>
               <h2>No page found! Keep looking ...</h2>
               <img
+                id="loading"
                 src={require(`./images/missing.gif`)}
                 alt="loading"
                 width="250vw"

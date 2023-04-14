@@ -5,7 +5,7 @@ import {
   patchReviewVotes,
 } from "../../utils.js/apiCalls";
 import { useParams } from "react-router-dom";
-import "./SingleReview.css";
+import "./SingularReview.css";
 import { Comments } from "../comments/Comments";
 
 export const SingularReview = () => {
@@ -53,7 +53,7 @@ export const SingularReview = () => {
     <section className="review-box">
       <h2 className="review">{singularReview.title}</h2>
       {isLoading ? (
-        <img
+        <img id="loading"
           src={require(`../../images/loading.gif`)}
           alt="loading"
           width="250vw"

@@ -7,8 +7,10 @@ export const Header = () => {
   return (
     <header className="header">
       <Link to={"/"}>
-        <img src={diceLogo} alt="logo" width="50vw" />
-        <h1>Board Game Reviews</h1>
+        <section className="site-link">
+          <img src={diceLogo} alt="logo"/>
+          <h1>Board Game Reviews</h1>
+        </section>
         <NavBar />
       </Link>
     </header>
