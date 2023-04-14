@@ -42,6 +42,8 @@ export const HomepageReviews = () => {
           width="250vw"
         />
       ) : (
+        <section>
+
         <ul className="review-container">
           {homeReviews.map((eachReview) => {
             return (
@@ -51,6 +53,10 @@ export const HomepageReviews = () => {
             );
           })}
         </ul>
+       <Link to={'reviews'} >
+        <button className="more-reviews">See all reviews</button>
+       </Link>
+          </section>
       )}
     </section>
   );
