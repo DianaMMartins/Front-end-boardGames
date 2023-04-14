@@ -1,3 +1,8 @@
+.reviews{
+    width: 100%;
+    margin: 0px 0px 120px 0px;
+}
+
 .review-container {
     margin: auto;
     padding-left: 0px;
@@ -9,7 +14,8 @@
 }
 
 .reviews h2 {
-    margin: 25px auto;
+    position: relative;
+    margin: 22px auto;
     color: var(--darkberry);
     font-size: 62px;
     text-shadow: -1px 0 var(--berry), 0 1px var(--berry), 1px 0 var(--berry),

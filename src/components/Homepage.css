@@ -1,6 +1,6 @@
 .homepage{
+    width: 100%;
+    margin: 500px 0px;
     background-color: hsl(300, 100%, 25%, 40%);
-    margin-top: 150px;
     position: absolute;
-    border: 3mm double var(--darkberry);
 }

@@ -5,7 +5,7 @@ import {
   patchReviewVotes,
 } from "../../utils.js/apiCalls";
 import { useParams } from "react-router-dom";
-import "./SingleReview.css";
+import "./SingularReview.css";
 import { Comments } from "../comments/Comments";
 
 export const SingularReview = () => {
