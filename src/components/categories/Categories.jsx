@@ -21,6 +21,7 @@ export const Categories = () => {
       <h3>Categories</h3>
       {isLoading ? (
         <img
+        id="loading"
           src={require(`../../images/loading.gif`)}
           alt="loading"
           width="250vw"

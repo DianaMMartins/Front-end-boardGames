@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getReviews } from "../../utils.js/apiCalls";
 import { ReviewCard } from "./ReviewCard";
 import { Link } from "react-router-dom";
+import './Reviews.css'
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -20,7 +21,7 @@ export const Reviews = () => {
     <section className="reviews">
       <h2>Reviews</h2>
       {isLoading ? (
-        <img
+        <img id="loading"
           src={require(`../../images/loading.gif`)}
           alt="loading"
           width="250vw"

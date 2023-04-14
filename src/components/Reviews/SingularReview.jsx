@@ -53,7 +53,7 @@ export const SingularReview = () => {
     <section className="review-box">
       <h2 className="review">{singularReview.title}</h2>
       {isLoading ? (
-        <img
+        <img id="loading"
           src={require(`../../images/loading.gif`)}
           alt="loading"
           width="250vw"

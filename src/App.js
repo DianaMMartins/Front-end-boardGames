@@ -31,6 +31,7 @@ function App() {
             <section>
               <h2>No page found! Keep looking ...</h2>
               <img
+                id="loading"
                 src={require(`./images/missing.gif`)}
                 alt="loading"
                 width="250vw"

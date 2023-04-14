@@ -20,6 +20,7 @@ export const Users = () => {
       <h2>Log in</h2>
       {isLoading ? (
         <img
+        id="loading"
           src={require(`../../images/loading.gif`)}
           alt="loading"
           width="250vw"
