@@ -16,18 +16,20 @@ export const HomepageReviews = () => {
     });
   }, []);
 
-  const HomepageReviews = [];
+  const homeReviews = [];
   if (reviews.length) {
     let reviewCounter = 0;
+    const noRepeats = [];
     while (reviewCounter < 8) {
-      reviewCounter++;
-      const eachReview = reviews[reviewCounter];
-      console.log(eachReview);
-      HomepageReviews.push(eachReview);
+      let random = Math.ceil(Math.random() * reviews.length);
+      if (!noRepeats.includes(random)) {
+        noRepeats.push(random);
+        reviewCounter++;
+        const eachReview = reviews[random];
+        homeReviews.push(eachReview);
+      }
     }
-    console.log(HomepageReviews);
   }
-  console.log(reviews);
 
   return (
     <section className="reviews">
@@ -41,7 +43,7 @@ export const HomepageReviews = () => {
         />
       ) : (
         <ul className="review-container">
-          {HomepageReviews.map((eachReview) => {
+          {homeReviews.map((eachReview) => {
             return (
               <Link to={`/reviews/${eachReview.review_id}`} key={eachReview.review_id}>
                 <ReviewCard eachReview={eachReview} />

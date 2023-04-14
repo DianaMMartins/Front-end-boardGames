@@ -1,16 +1,16 @@
-import { HomepageReviews } from './Reviews/HomepageReviews';
-import './Homepage.css'
-import { Routes } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+import { HomepageReviews } from "./Reviews/HomepageReviews";
+import "./Homepage.css";
+import { HomepageCategories } from "./categories/HomepageCategories";
 
 export const Homepage = () => {
-    return (
-        <section className='homepage'>
-            <HomepageReviews />
-        <Routes>
-            <Route path="/reviews" element={<HomepageReviews />} />
-        </Routes>
-        </section>
-
-    )
-}
+  return (
+    <section className="homepage">
+      <section className="homepage-categories">
+        <HomepageCategories />
+      </section>
+      <section className="homepage-reviews">
+        <HomepageReviews />
+      </section>
+    </section>
+  );
+};
