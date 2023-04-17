@@ -1,15 +1,14 @@
 :root {
-  --mint: #d2f3e0;
-  --lightmint: #f5fbf1;
-  --peach: #ffabab;
-  --berry: #feb9c8;
-  --darkberry: #d14d72;
+  --mint: #ABC4AA;
+  --lightbrown: #A9907E;
+  --brown: #675D50;
+  --peach: #F3DEBA;
   --mainfont: "Noto Sans", sans-serif;
   --headerfont: "Rubik Vinyl", cursive;
 }
 
 body {
-  background-image: url("./images/background.avif");
+  background-image: url("./images/background.jpg");
 }
 
 .App {

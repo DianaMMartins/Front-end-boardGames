@@ -10,32 +10,30 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 20px 10px;
+  gap: 100px 50px;
 }
 
 .reviews h2 {
+  font-family: var(--headerfont);
   position: relative;
-  margin: 20px auto 50px auto;
-  color: var(--darkberry);
+  margin-bottom: 60px;
+  color: var(--brown);
   font-size: 62px;
-  text-shadow: -1px 0 var(--berry), 0 1px var(--berry), 1px 0 var(--berry),
-    0 -1px var(--berry);
-  padding-top: 50px;
+  font-weight: 900;
 }
 
 .more-reviews {
-  width: 80vw;
+  width: 60vw;
   height: 70px;
-  margin: 45px 0px;
+  margin: 70px 0px;
   font-size: 24px;
-  background-color: var(--darkberry);
-  border: 1mm solid var(--berry);
+  background-color: var(--peach);
+  border: 1mm solid var(--brown);
 }
 
 .more-reviews:hover {
   cursor: pointer;
   font-size: 32px;
-  background-color: var(--berry);
-  border: 1mm solid var(--darkberry);
+  background-color: var(--brown);
+  border: 1mm solid var(--peach);
 }
-

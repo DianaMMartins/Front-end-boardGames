@@ -9,12 +9,12 @@
 }
 
 #categories-header {
+  font-family: var(--headerfont);
   position: relative;
-  margin: 0px auto 50px auto;
-  color: var(--darkberry);
+  margin-bottom: 60px;
+  color: var(--brown);
   font-size: 62px;
-  text-shadow: -1px 0 var(--berry), 0 1px var(--berry), 1px 0 var(--berry),
-    0 -1px var(--berry);
+  font-weight: 900;
 }
 
 a:link {
@@ -37,15 +37,15 @@ a:active {
 .more-categories {
   width: 60vw;
   height: 70px;
-  margin: 45px 0px;
+  margin: 70px 0px;
   font-size: 24px;
-  background-color: var(--berry);
-  border: 1mm solid var(--darkberry);
+  background-color: var(--peach);
+  border: 1mm solid var(--brown);
 }
 
 .more-categories:hover {
   cursor: pointer;
   font-size: 32px;
-  background-color: var(--darkberry);
-  border: 1mm solid var(--berry);
+  background-color: var(--brown);
+  border: 1mm solid var(--peach);
 }

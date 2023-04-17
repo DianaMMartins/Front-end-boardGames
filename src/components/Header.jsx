@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <header className="header">
+    <header className="site-link">
       <Link to={"/"}>
-        <section className="site-link">
-          <img src={diceLogo} alt="logo"/>
+        <section className="header">
+          <img className="logo" src={diceLogo} alt="logo"/>
           <h1>Board Game Reviews</h1>
         </section>
         <NavBar />
