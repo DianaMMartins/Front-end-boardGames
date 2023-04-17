@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './CategoryCard.css'
 
 export const CategoryCard = ({ eachCategory }) => {
   const improveTitle = (titleToChange) => {

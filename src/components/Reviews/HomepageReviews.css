@@ -31,3 +31,11 @@
   background-color: var(--darkberry);
   border: 1mm solid var(--berry);
 }
+
+.more-reviews:hover {
+  cursor: pointer;
+  font-size: 32px;
+  background-color: var(--berry);
+  border: 1mm solid var(--darkberry);
+}
+
