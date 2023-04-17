@@ -41,3 +41,12 @@ a:hover {
 a:active {
   text-decoration: none;
 }
+
+.more-categories {
+  width: 60vw;
+  height: 70px;
+  margin: 45px 0px;
+  font-size: 24px;
+  background-color: var(--berry);
+  border: 1mm solid var(--darkberry);
+}

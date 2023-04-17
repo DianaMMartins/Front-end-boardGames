@@ -26,7 +26,6 @@ export const HomepageReviews = () => {
           }
         }
       }
-      console.log(homeReviews);
       setReviews(homeReviews);
       setIsLoading(false);
     });
