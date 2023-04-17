@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getCategories } from "../../utils.js/apiCalls";
 import { CategoryCard } from "./CategoryCard";
+import './HomepageCategories.css'
 
 export const HomepageCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -9,38 +10,31 @@ export const HomepageCategories = () => {
   useEffect(() => {
     setIsLoading(true);
     getCategories().then((categoriesFromApi) => {
-      setCategories(categoriesFromApi);
+      const homeCategories = [];
+      const noRepeats = [];
+
+      while (noRepeats.length < 4) {
+        let random = Math.ceil(Math.random() * categoriesFromApi.length);
+
+        if (!noRepeats.includes(random)) {
+          const eachCategory = categoriesFromApi[random];
+          console.log(eachCategory);
+          if (eachCategory !== undefined) {
+            noRepeats.push(random);
+            homeCategories.push(eachCategory);
+          }
+        }
+      }
+      console.log(homeCategories);
+      setCategories(homeCategories);
       setIsLoading(false);
     });
   }, []);
 
-  const getHomeCategories = () => {
-    const homeCategories = [];
-
-    if (categories.length) {
-      let categoriesCounter = 0;
-      const noRepeats = [];
-
-      while (categoriesCounter < 4) {
-        let random = Math.ceil(Math.random() * categories.length);
-        if (!noRepeats.includes(random)) {
-          noRepeats.push(random);
-          categoriesCounter++;
-          const eachCategory = categories[random];
-          homeCategories.push(eachCategory)
-        }
-      }
-      // console.log(homeCategories, noRepeats);
-    }
-    return homeCategories;
-  };
-
-  // console.log(getHomeCategories(), categories);
-
   return (
     <section className="categories">
-      <h3>Categories</h3>
-      {isLoading ? (
+      <h3 id="categories-header">Categories</h3>
+      {(isLoading) ? (
         <img
           id="loading"
           src={require(`../../images/loading.gif`)}
@@ -48,19 +42,17 @@ export const HomepageCategories = () => {
           width="250vw"
         />
       ) : (
-        // <ul className="categories-list">
-        //   {getHomeCategories().map((eachCategory) => {
-        //     return (
-        //       <CategoryCard
-        //         eachCategory={eachCategory}
-        //         key={eachCategory.slug}
-        //       />
-        //     );
-        //   })}
-        // </ul>
-      <p>hello</p>
-        )
-      }
+        <ul className="categories-container">
+          {categories.map((eachCategory) => {
+            return (
+              <CategoryCard
+                eachCategory={eachCategory}
+                key={eachCategory.slug}
+              />
+            );
+          })}
+        </ul>
+      )}
     </section>
   );
 };

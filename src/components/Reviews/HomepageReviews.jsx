@@ -10,26 +10,27 @@ export const HomepageReviews = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getReviews().then((reviewsData) => {
-      setReviews(reviewsData);
+    getReviews().then((reviewsFromApi) => {
+      const homeReviews = [];
+      const noRepeats = [];
+
+      while (noRepeats.length < 8) {
+        let random = Math.ceil(Math.random() * reviewsFromApi.length);
+
+        if (!noRepeats.includes(random)) {
+          const eachReview = reviewsFromApi[random];
+          console.log(eachReview);
+          if (eachReview !== undefined) {
+            noRepeats.push(random);
+            homeReviews.push(eachReview);
+          }
+        }
+      }
+      console.log(homeReviews);
+      setReviews(homeReviews);
       setIsLoading(false);
     });
   }, []);
-
-  const homeReviews = [];
-  if (reviews.length) {
-    let reviewCounter = 0;
-    const noRepeats = [];
-    while (reviewCounter < 8) {
-      let random = Math.ceil(Math.random() * reviews.length);
-      if (!noRepeats.includes(random)) {
-        noRepeats.push(random);
-        reviewCounter++;
-        const eachReview = reviews[random];
-        homeReviews.push(eachReview);
-      }
-    }
-  }
 
   return (
     <section className="reviews">
@@ -43,19 +44,22 @@ export const HomepageReviews = () => {
         />
       ) : (
         <section>
-        <ul className="review-container">
-          {homeReviews.map((eachReview) => {
-            return (
-              <Link to={`/reviews/${eachReview.review_id}`} key={eachReview.review_id}>
-                <ReviewCard eachReview={eachReview} />
-              </Link>
-            );
-          })}
-        </ul>
-       <Link to={'reviews'} >
-        <button className="more-reviews">See all reviews</button>
-       </Link>
-          </section>
+          <ul className="review-container">
+            {reviews.map((eachReview) => {
+              return (
+                <Link
+                  to={`/reviews/${eachReview.review_id}`}
+                  key={eachReview.review_id}
+                >
+                  <ReviewCard eachReview={eachReview} />
+                </Link>
+              );
+            })}
+          </ul>
+          <Link to={"reviews"}>
+            <button className="more-reviews">See all reviews</button>
+          </Link>
+        </section>
       )}
     </section>
   );

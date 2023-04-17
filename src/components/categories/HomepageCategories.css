@@ -1,0 +1,43 @@
+.categories-container {
+  margin: auto;
+  padding-left: 0px;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px 10px;
+}
+
+#categories-header {
+  position: relative;
+  margin: 0px auto 50px auto;
+  color: var(--darkberry);
+  font-size: 62px;
+  text-shadow: -1px 0 var(--berry), 0 1px var(--berry), 1px 0 var(--berry),
+    0 -1px var(--berry);
+}
+
+.category-card {
+  width: 300px;
+  height: 350px;
+  overflow: hidden;
+  color: black;
+  font-size: 1.5em;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
