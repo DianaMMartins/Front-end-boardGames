@@ -14,7 +14,7 @@ export const HomepageCategories = () => {
       const homeCategories = [];
       const noRepeats = [];
 
-      while (noRepeats.length < 4) {
+      while (noRepeats.length < 5) {
         let random = Math.ceil(Math.random() * categoriesFromApi.length);
 
         if (!noRepeats.includes(random)) {
@@ -34,7 +34,12 @@ export const HomepageCategories = () => {
 
   return (
     <section className="categories">
-      <h3 id="categories-header">Categories</h3>
+      <section class="section-categories">
+        <h3 id="categories-header">Categories</h3>
+        <Link to={"/categories"}>
+          <h4 class="more-categories">See all</h4>
+        </Link>
+      </section>
       {isLoading ? (
         <img
           id="loading"
@@ -43,21 +48,16 @@ export const HomepageCategories = () => {
           width="250vw"
         />
       ) : (
-        <section>
-          <ul className="categories-container">
-            {categories.map((eachCategory) => {
-              return (
-                <CategoryCard
-                  eachCategory={eachCategory}
-                  key={eachCategory.slug}
-                />
-              );
-            })}
-          </ul>
-          <Link to={"categories"}>
-            <button className="more-categories">See all categories</button>
-          </Link>
-        </section>
+        <ul className="categories-container">
+          {categories.map((eachCategory) => {
+            return (
+              <CategoryCard
+                eachCategory={eachCategory}
+                key={eachCategory.slug}
+              />
+            );
+          })}
+        </ul>
       )}
     </section>
   );

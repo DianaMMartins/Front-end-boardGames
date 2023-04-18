@@ -1,21 +1,17 @@
 .header {
   margin: 0px;
+  height: 30vh;
+  background-color: var(--peach);
   display: flex;
   justify-content: center;
-  background-color: #675d5080;
-  border-bottom: 1mm solid var(--brown);
-  height: 100vh;
+  align-items: center;
 }
 
 .header h1 {
-  color: var(--peach);
+  color: var(--brown);
   font-family: var(--headerfont);
-  font-size: 160px;
-  text-shadow: -1px 0 var(--brown), 0 1px var(--brown), 1px 0 var(--brown),
-    0 -1px var(--brown);
+  font-size: 6.25vw;
   text-align: left;
-  margin-top: 18.5%;
-  margin-left: 99px;
 }
 
 .header.site-link {
@@ -26,8 +22,7 @@
 }
 
 .logo {
-  width: 350px;
-  height: 350px;
-  align-self: center;
-  margin-left: 150px;
+  width: 20vw;
+  height: auto;
+  margin-top: 10px;
 }

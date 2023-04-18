@@ -1,39 +1,60 @@
 .reviews {
-  width: 100%;
-  margin: 0px 0px 120px 0px;
+  width: 60vw;
+  margin-left: 20.5%;
+}
+
+.section-reviews {
+  display: inline-flex;
+  align-items: baseline;
+  width: inherit;
+  justify-content: left;
+  padding-left: 4px;
 }
 
 .review-container {
-  margin: auto;
   padding-left: 0px;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 100px 50px;
+  justify-content: flex-start;
+  gap: 4vh 1vw;
+  background: whitesmoke;
+  margin: 0px 0px 14vh 0px;
 }
 
-.reviews h2 {
+.reviews h3 {
   font-family: var(--headerfont);
-  position: relative;
-  margin-bottom: 60px;
   color: var(--brown);
-  font-size: 62px;
-  font-weight: 900;
+  font-size: 32px;
+  margin: 0px;
+  padding: 24px 0px;
 }
 
 .more-reviews {
-  width: 60vw;
-  height: 70px;
-  margin: 70px 0px;
-  font-size: 24px;
-  background-color: var(--peach);
-  border: 1mm solid var(--brown);
+  margin: 0px;
+  font-size: 20px;
+  color: var(--lightbrown);
+  padding-left: 24px;
+  font-family: var(--headerfont);
 }
 
 .more-reviews:hover {
   cursor: pointer;
-  font-size: 32px;
-  background-color: var(--brown);
-  border: 1mm solid var(--peach);
+  font-size: 27px;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }

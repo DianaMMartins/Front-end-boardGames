@@ -33,7 +33,12 @@ export const HomepageReviews = () => {
 
   return (
     <section className="reviews">
-      <h2>Reviews</h2>
+      <section class="section-reviews">
+        <h3 id="reviews-header">Reviews</h3>
+        <a href="/reviews">
+          <h4 class="more-reviews">See all</h4>
+        </a>
+      </section>
       {isLoading ? (
         <img
           id="loading"
@@ -42,7 +47,6 @@ export const HomepageReviews = () => {
           width="250vw"
         />
       ) : (
-        <section>
           <ul className="review-container">
             {reviews.map((eachReview) => {
               return (
@@ -55,10 +59,6 @@ export const HomepageReviews = () => {
               );
             })}
           </ul>
-          <Link to={"reviews"}>
-            <button className="more-reviews">See all reviews</button>
-          </Link>
-        </section>
       )}
     </section>
   );

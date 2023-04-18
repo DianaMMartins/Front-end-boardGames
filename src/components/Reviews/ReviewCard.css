@@ -1,44 +1,42 @@
 .review-card {
-  width: 350px;
-  height: 480px;
+  width: 248px;
+  height: 400px;
   overflow: hidden;
-  color: black;
   background-color: whitesmoke;
-  box-shadow: 5px 5px 30px var(--brown);
-  border-radius: 0px 100px;
-  font-size: 1.5em;
+  box-shadow: 0px 0px 4px var(--brown);
+  border-radius: 10px 10px;
+  border: 1mm solid var(--brown);
 }
 
 .review-card img {
   padding: 0px;
   width: 100%;
   max-width: 400px;
-  height: 300px;
+  height: 275px;
   object-fit: cover;
-  transition: transform 0.2s;
+  transition: transform 0.1s;
 }
 
 .review-intro {
   position: relative;
-  text-align: right;
-  padding-right: 20px;
-  margin-top: 0px;
+  color: var(--brown);
 }
 
-.review-intro h3 {
-  margin: 5px 0px 10px 0px;
+.review-intro h4 {
+  margin: 14px 6px 12px 5px;
+  font-size: 1.2vw;
 }
 
 .review-intro p {
-  margin-top: 5px;
+  margin: 0vh;
+  font-size: 1vw;
 }
 
 .review-card:hover .review-intro {
-  margin-top: -90%;
+  margin-top: -105%;
   object-fit: cover;
-  font-size: 150%;
   text-align: center;
-  padding: 10px;
+  font-size: 200%;
 }
 
 .review-card:hover img {
