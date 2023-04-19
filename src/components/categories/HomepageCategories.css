@@ -1,9 +1,9 @@
-.reviews {
+.categories {
   width: 60vw;
   margin-left: 20.5%;
 }
 
-.section-reviews {
+.section-categories {
   display: inline-flex;
   align-items: baseline;
   width: inherit;
@@ -11,18 +11,15 @@
   padding-left: 4px;
 }
 
-.review-container {
+.categories-container {
   padding-left: 0px;
-  width: 100%;
+  margin: auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 4vh 1vw;
-  background: whitesmoke;
-  margin: 0px 0px 14vh 0px;
+  gap: 0px 1vw;
 }
 
-.reviews h3 {
+#categories-header {
   font-family: var(--headerfont);
   color: var(--brown);
   font-size: 32px;
@@ -30,7 +27,7 @@
   padding: 24px 0px;
 }
 
-.more-reviews {
+.more-categories {
   margin: 0px;
   font-size: 20px;
   color: var(--lightbrown);
@@ -38,10 +35,11 @@
   font-family: var(--headerfont);
 }
 
-.more-reviews:hover {
+.more-categories:hover {
   cursor: pointer;
   font-size: 27px;
 }
+
 a:link {
   text-decoration: none;
 }

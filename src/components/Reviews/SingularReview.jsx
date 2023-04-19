@@ -26,7 +26,6 @@ export const SingularReview = () => {
     if (voteButton === false) {
       setVoteButton(true);
       setSingularReview((currentReview) => {
-        console.log(currentReview);
         return { ...currentReview, votes: currentReview.votes + 1 };
       });
       patchReviewVotes(review_id, 1).catch(() => {

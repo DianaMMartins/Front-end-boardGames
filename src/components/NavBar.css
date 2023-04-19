@@ -1,17 +1,29 @@
 nav {
-  width: 50%;
-  height: 70px;
+  width: 100%;
+  background-color: var(--brown);
 }
 
 .nav {
+  height: 54px;
   display: inline-flex;
-  align-items: baseline;
-  gap: 20px;
-  flex-direction: row;
-  justify-content: flex-end;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--headerfont);
+  padding-left: 13px;
 }
 
-nav p {
-  margin-left: 25px;
+.nav p {
+  color: var(--peach);
+  font-size: 22px;
+  padding: 14px 128px;
+}
+
+#no-border {
+  border: none;
+  padding: auto 128px;
+}
+
+#border {
+  border-right: 1mm solid var(--peach);
+  border-left: 1mm solid var(--peach);
 }

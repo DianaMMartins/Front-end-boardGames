@@ -1,79 +1,83 @@
 .review-card {
-    width: 350px;
+  width: 248px;
+  height: 400px;
+  overflow: hidden;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 4px var(--brown);
+  border-radius: 10px 10px;
+  border: 1mm solid var(--brown);
+}
+
+.review-card img {
+  padding: 0px;
+  width: 100%;
+  max-width: 400px;
+  height: 275px;
+  object-fit: cover;
+  transition: transform 0.1s;
+}
+
+.review-intro {
+  position: relative;
+  color: var(--brown);
+}
+
+.review-intro h4 {
+  margin: 14px 6px 12px 5px;
+  font-size: 1.2vw;
+}
+
+.review-intro p {
+  margin: 0vh;
+  font-size: 1vw;
+}
+
+.review-card:hover .review-intro {
+  margin-top: -105%;
+  object-fit: cover;
+  text-align: center;
+  font-size: 200%;
+}
+
+.review-card:hover img {
+  margin-top: 25%;
+  transform: scale(2);
+  opacity: 0.5;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+@media (max-width: 400px) {
+  .review-card {
+    width: 280px;
     height: 450px;
-    border: 4mm ridge var(--darkberry);
+    border: 4mm ridge var(--brown);
     overflow: hidden;
     background-color: whitesmoke;
     color: black;
     text-decoration: none;
   }
-  
-  .review-card img {
-    padding: 0px;
-    width: 100%;
-    max-width: 400px;
-    height: 300px;
-    object-fit: cover;
-    transition: transform 0.2s;
-    z-index: -1;
-  }
-  
-  .review-intro {
-    margin: 0;
-    padding: 0px;
-    position: absolute;
-    width: inherit;
-    z-index: 1;
-  }
-  
-  .review-card:hover img {
-    transform: scale(2);
-    opacity: 0.5;
-  }
-  
   .review-card:hover .review-intro {
-    margin-top: -305px;
+    width: 280px;
+    font-size: 200%;
     object-fit: cover;
-    font-size: 240%;
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.3);
-    width: 350px;
     height: 450px;
   }
-  
-  a:link {
-    text-decoration: none;
-  }
-  
-  a:visited {
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-  a:active {
-    text-decoration: none;
-  }
-  
-  @media (max-width: 400px) {
-    .review-card {
-      width: 280px;
-      height: 450px;
-      border: 4mm ridge var(--darkberry);
-      overflow: hidden;
-      background-color: whitesmoke;
-      color: black;
-      text-decoration: none;
-    }
-    .review-card:hover .review-intro {
-      width: 280px;
-      font-size: 200%;
-      object-fit: cover;
-      z-index: 1;
-      background-color: rgba(255, 255, 255, 0.3);
-      height: 450px;
-    }
-  }
+}

@@ -15,7 +15,6 @@ export const NewComment = ({ review_id, setComments }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(commentToPost.body);
     if (
       commentToPost.username === undefined ||
       commentToPost.username.username === ""

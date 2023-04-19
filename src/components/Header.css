@@ -1,27 +1,28 @@
 .header {
-    margin: 0px;
-    border: 2mm solid var(--darkberry);
-    display: flex;
-    justify-content: center;
-    background-color: var(--mint);
-  }
-  
-  .header h1 {
-    color: var(--berry);
-    font-family: var(--headerfont);
-    font-size: 48px;
-    text-shadow: -1px 0 var(--darkberry), 0 1px var(--darkberry),
-      1px 0 var(--darkberry), 0 -1px var(--darkberry);
-  }
-  
-  .header.site-link {
-    width: 50px;
-    height: 50px;
-    align-self: center;
-    margin: 10px;
-  }
-  
-  .header img {
-    width: 80px;
-    height: auto;
-  }
+  margin: 0px;
+  height: 30vh;
+  background-color: var(--peach);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  color: var(--brown);
+  font-family: var(--headerfont);
+  font-size: 6.25vw;
+  text-align: left;
+}
+
+.header.site-link {
+  width: 50px;
+  height: 50px;
+  align-self: center;
+  margin: 10px;
+}
+
+.logo {
+  width: 20vw;
+  height: auto;
+  margin-top: 10px;
+}

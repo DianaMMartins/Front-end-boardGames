@@ -10,28 +10,35 @@ export const HomepageReviews = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getReviews().then((reviewsData) => {
-      setReviews(reviewsData);
+    getReviews().then((reviewsFromApi) => {
+      const homeReviews = [];
+      const noRepeats = [];
+
+      while (noRepeats.length < 8) {
+        let random = Math.ceil(Math.random() * reviewsFromApi.length);
+
+        if (!noRepeats.includes(random)) {
+          const eachReview = reviewsFromApi[random];
+          console.log(eachReview);
+          if (eachReview !== undefined) {
+            noRepeats.push(random);
+            homeReviews.push(eachReview);
+          }
+        }
+      }
+      setReviews(homeReviews);
       setIsLoading(false);
     });
   }, []);
 
-  const HomepageReviews = [];
-  if (reviews.length) {
-    let reviewCounter = 0;
-    while (reviewCounter < 8) {
-      reviewCounter++;
-      const eachReview = reviews[reviewCounter];
-      console.log(eachReview);
-      HomepageReviews.push(eachReview);
-    }
-    console.log(HomepageReviews);
-  }
-  console.log(reviews);
-
   return (
     <section className="reviews">
-      <h2>Reviews</h2>
+      <section class="section-reviews">
+        <h3 id="reviews-header">Reviews</h3>
+        <a href="/reviews">
+          <h4 class="more-reviews">See all</h4>
+        </a>
+      </section>
       {isLoading ? (
         <img
           id="loading"
@@ -40,15 +47,18 @@ export const HomepageReviews = () => {
           width="250vw"
         />
       ) : (
-        <ul className="review-container">
-          {HomepageReviews.map((eachReview) => {
-            return (
-              <Link to={`/reviews/${eachReview.review_id}`} key={eachReview.review_id}>
-                <ReviewCard eachReview={eachReview} />
-              </Link>
-            );
-          })}
-        </ul>
+          <ul className="review-container">
+            {reviews.map((eachReview) => {
+              return (
+                <Link
+                  to={`/reviews/${eachReview.review_id}`}
+                  key={eachReview.review_id}
+                >
+                  <ReviewCard eachReview={eachReview} />
+                </Link>
+              );
+            })}
+          </ul>
       )}
     </section>
   );

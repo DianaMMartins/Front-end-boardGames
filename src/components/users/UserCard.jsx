@@ -4,7 +4,6 @@ import { UserContext } from "../../contexts/Users";
 export const UserCard = ({ eachUser }) => {
   const { user, setUser } = useContext(UserContext);
   
-  console.log(user);
    //check if user is logged in
   //display different page depending on if logged in or not
 
