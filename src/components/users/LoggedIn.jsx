@@ -4,7 +4,7 @@ export const LoggedIn = ({ user, onLogout }) => {
   console.log(user);
   return (
     <section className="loggedIn-page">
-      {user.username  === "" ? (
+      {user.username === "" ? (
         <section>
           <h3>No user logged in</h3>
           <Link to={"/users"}>Click here to log in</Link>

@@ -18,6 +18,15 @@ nav {
   padding: 14px 128px;
 }
 
+.nav button {
+  border: none;
+  font: inherit;
+  color: var(--peach);
+  background: none;
+  font-size: 22px;
+  padding: 14px 128px;
+}
+
 #no-border {
   border: none;
   padding: auto 128px;
