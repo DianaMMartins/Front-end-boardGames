@@ -6,6 +6,7 @@
   box-shadow: 0px 0px 4px var(--brown);
   border-radius: 10px 10px;
   border: 1mm solid var(--brown);
+  position: relative;
 }
 
 .category-name {
@@ -18,9 +19,19 @@
   padding-top: 22px;
 }
 
+.each-category img {
+  width: 101%;
+  max-width: 300px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.1s;
+}
+
 .category-card:hover .category-name {
-  margin-top: -62%;
-  font-size: 208%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   font-weight: 900;
   text-shadow: -1px 0 var(--brown), 0 1px var(--brown), 1px 0 var(--brown),
