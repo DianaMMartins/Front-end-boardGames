@@ -1,7 +1,40 @@
+.categories {
+  width: 60vw;
+  margin-left: 20.5%;
+}
+
+.category-card {
+  width: 234px;
+  height: 315px;
+}
+
+.categories-list {
+  padding: 0px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 3vh 2vw;
+}
+
 .each-category img {
   width: 101%;
   max-width: 300px;
   height: 200px;
   object-fit: cover;
   transition: transform 0.1s;
+}
+
+.category-name {
+  font-size: 24px;
+  font-weight: 900;
+  padding-top: 30px;
+}
+
+.category-card:hover img {
+  transform: scale(2);
+  opacity: 0.5;
+  margin-top: 22px;
+}
+.category-card:hover .category-name {
+  padding: 25px 20px;
+  font-size: 36px;
 }
