@@ -19,14 +19,12 @@ export const HomepageCategories = () => {
 
         if (!noRepeats.includes(random)) {
           const eachCategory = categoriesFromApi[random];
-          console.log(eachCategory);
           if (eachCategory !== undefined) {
             noRepeats.push(random);
             homeCategories.push(eachCategory);
           }
         }
       }
-      console.log(homeCategories);
       setCategories(homeCategories);
       setIsLoading(false);
     });
@@ -34,10 +32,10 @@ export const HomepageCategories = () => {
 
   return (
     <section className="categories">
-      <section class="section-categories">
+      <section className="section-categories">
         <h3 id="categories-header">Categories</h3>
         <Link to={"/categories"}>
-          <h4 class="more-categories">See all</h4>
+          <h4 className="more-categories">See all</h4>
         </Link>
       </section>
       {isLoading ? (

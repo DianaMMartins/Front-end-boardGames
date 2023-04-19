@@ -19,7 +19,6 @@ export const HomepageReviews = () => {
 
         if (!noRepeats.includes(random)) {
           const eachReview = reviewsFromApi[random];
-          console.log(eachReview);
           if (eachReview !== undefined) {
             noRepeats.push(random);
             homeReviews.push(eachReview);
@@ -33,11 +32,11 @@ export const HomepageReviews = () => {
 
   return (
     <section className="reviews">
-      <section class="section-reviews">
+      <section className="section-reviews">
         <h3 id="reviews-header">Reviews</h3>
-        <a href="/reviews">
-          <h4 class="more-reviews">See all</h4>
-        </a>
+        <Link to={"/reviews"}>
+          <h4 className="more-reviews">See all</h4>
+        </Link>
       </section>
       {isLoading ? (
         <img
@@ -47,18 +46,18 @@ export const HomepageReviews = () => {
           width="250vw"
         />
       ) : (
-          <ul className="review-container">
-            {reviews.map((eachReview) => {
-              return (
-                <Link
-                  to={`/reviews/${eachReview.review_id}`}
-                  key={eachReview.review_id}
-                >
-                  <ReviewCard eachReview={eachReview} />
-                </Link>
-              );
-            })}
-          </ul>
+        <ul className="review-container">
+          {reviews.map((eachReview) => {
+            return (
+              <Link
+                to={`/reviews/${eachReview.review_id}`}
+                key={eachReview.review_id}
+              >
+                <ReviewCard eachReview={eachReview} />
+              </Link>
+            );
+          })}
+        </ul>
       )}
     </section>
   );
