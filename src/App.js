@@ -1,23 +1,22 @@
-import { useContext } from "react";
-import { Route, Routes, Link } from "react-router-dom";
+// import { useContext } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/Header";
 import { ReviewsPage } from "./components/Reviews/ReviewsPage";
 import { SingularReview } from "./components/Reviews/SingularReview";
 import { Homepage } from "./components/Homepage";
-import { Users } from "./components/users/Users";
-import { UserContext } from "./contexts/Users";
-import { LoggedIn } from "./components/users/LoggedIn";
+import { Users } from "./components/users/LogInPage";
+// import { UserContext } from "./contexts/Users";
+// import { LoggedIn } from "./components/users/LoggedIn";
 import { Categories } from "./components/categories/Categories";
 import { CategoryPage } from "./components/categories/CategoryPage";
 
 function App() {
-  const { user } = useContext(UserContext);
+  // const { user, logout } = useContext(UserContext);
 
   return (
     <div className="App">
       <Header />
-      {user.length > 0 ? <LoggedIn /> : <Link to={"/users"}></Link>}
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/reviews" element={<ReviewsPage />} />
