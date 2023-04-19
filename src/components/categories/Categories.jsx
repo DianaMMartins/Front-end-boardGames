@@ -18,7 +18,7 @@ export const Categories = () => {
 
   return (
     <section className="categories">
-      <h3>Categories</h3>
+      <h3 id="categories-header">Categories</h3>
       {isLoading ? (
         <img
         id="loading"
