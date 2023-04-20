@@ -14,9 +14,9 @@
 }
 
 .reviews h2 {
-  margin: 25px auto;
-  color: var(--brown);
-  font-size: 62px;
-  text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach),
-    0 -1px var(--peach);
+  font-family: var(--headerfont);
+color: var(--brown);
+font-size: 32px;
+margin: 0px;
+padding: 24px 0px;
 }
