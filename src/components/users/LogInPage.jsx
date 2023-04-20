@@ -3,6 +3,7 @@ import { UserCard } from "./UserCard";
 import { getUsers } from "../../utils.js/apiCalls";
 import { UserContext } from "../../contexts/Users";
 import { LoggedIn } from "./LoggedIn";
+import './LogInPage.css'
 
 export const Users = () => {
   const [users, setUsers] = useState([]);
@@ -26,8 +27,6 @@ export const Users = () => {
     fetchData();
   }, []);
 
-  console.log(users, user, "hello", matchingUser);
-
   return (
     <section className="users">
       {matchingUser ? (
@@ -43,7 +42,7 @@ export const Users = () => {
               width="250vw"
             />
           ) : (
-            <ul>
+            <ul className="users-section">
               {users.map((eachUser) => {
                 return <UserCard eachUser={eachUser} key={eachUser.name} />;
               })}

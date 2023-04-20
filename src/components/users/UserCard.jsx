@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/Users";
+import './UserCard.css'
 
 export const UserCard = ({ eachUser }) => {
   const { setUser } = useContext(UserContext);
@@ -9,14 +10,18 @@ export const UserCard = ({ eachUser }) => {
   };
 
   return (
-          <li className="user-li" key={eachUser.name}>
-          <h3>{eachUser.name}</h3>
-          <img src={eachUser.avatar_url} alt="avatar" width="150vw" />
-          <p>
-            <button className="sign-in" onClick={handleClick}>
-              Sign in
-            </button>
-          </p>
-        </li>
+    <li className="user-li" key={eachUser.name}>
+      <section className="user-info ">
+        <h3>{eachUser.name}</h3>
+        <div className="user-image-container">
+        <img src={eachUser.avatar_url} alt="avatar"/>
+        </div>
+      </section>
+      <section className="button-section">
+      <button className="sign-in" onClick={handleClick}>
+        Sign in
+      </button>
+      </section>
+    </li>
   );
 };

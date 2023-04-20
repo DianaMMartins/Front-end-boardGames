@@ -50,6 +50,7 @@ export const NewComment = ({ review_id, setComments }) => {
           disabled={!submitButton}
           rows="10"
           cols="50"
+          style={'cursor: progress;'}
           onChange={(event) => setNewComment(event.target.value)}
         />
       </p>

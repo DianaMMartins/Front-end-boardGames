@@ -35,7 +35,7 @@ export const HomepageCategories = () => {
       <section className="section-categories">
         <h3 id="categories-header">Categories</h3>
         <Link to={"/categories"}>
-          <h4 className="more-categories">See all</h4>
+          <h4 class="more-categories">See all</h4>
         </Link>
       </section>
       {isLoading ? (

@@ -5,7 +5,7 @@
   overflow: hidden;
   background-color: whitesmoke;
   box-shadow: 0px 0px 4px var(--brown);
-  border-radius: 10px 10px;
+  border-radius: 10px ;
   border: 1mm solid var(--brown);
 }
 
@@ -40,8 +40,10 @@
 
 .review-card:hover .review-intro {
   top: 50%;
-  font-size: 200%;
+  font-size: 210%;
   padding: inherit 15px;
+  text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach), 0 -1px var(--peach);
+color: black;
 }
 
 .review-card:hover img {

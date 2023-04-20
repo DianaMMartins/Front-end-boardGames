@@ -1,0 +1,53 @@
+.user-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 200px;
+  padding-bottom: 100%;
+  height: 0px;
+}
+
+.user-info h3 {
+  margin: 8px;
+  font-size: 24px;
+  font-family: var(--mainfont);
+  text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach),
+    0 -1px var(--peach);
+}
+
+.user-info img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  object-fit: contain;
+  border-radius: 5%;
+  background-color: white;
+}
+
+.user-name {
+  margin-top: 5px;
+}
+
+.button-section {
+  background-color: var(--brown);
+  height: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in {
+  display: contents;
+  font-family: var(--headerfont);
+  color: var(--peach);
+  font-size: 22px;
+}
+
+.sign-in:hover {
+  font-size: 32px;
+  cursor: pointer;
+  padding-top: 0px;
+}
