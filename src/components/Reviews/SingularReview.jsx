@@ -70,19 +70,22 @@ export const SingularReview = () => {
             <section className="review-section">
               <h2>{singularReview.title}</h2>
               <h3>Designed by: {singularReview.designer}</h3>
-              <img src={singularReview.review_img_url} alt="review" />
-              <p className="review-body">{singularReview.review_body}</p>
-              <p className="one-line">
-                Written by: {singularReview.owner} on{" "}
-                {new Date(singularReview.created_at).toDateString()}
-              </p>
+              <section className="img-content">
+                <img src={singularReview.review_img_url} alt="review" />
+                <p className="one-line">
+                  Written by: {singularReview.owner} on{" "}
+                  {new Date(singularReview.created_at).toDateString()}
+                </p>
+                <p className="review-body">{singularReview.review_body}</p>
+              </section>
+
               <button
                 className="vote-button"
                 onClick={() => upVote(singularReview.review_id)}
               >
                 <span aria-label="votes for this review">
-                  {singularReview.votes + ' '}  
-                  {' ' + thumb}
+                  {singularReview.votes + " "}
+                  {" " + thumb}
                 </span>
               </button>
             </section>

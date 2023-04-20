@@ -1,23 +1,18 @@
 .review-box {
-  width: 60vw;
-  margin-left: 20.5%;
+  width: 59.9vw;
+  margin-left: 20.4%;
 }
 
 .review-section {
-  padding-left: 0px;
   width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
   margin: 30px 0px 14vh 0px;
-  align-content: center;
-  flex-direction: column;
   box-shadow: 0px 0px 4px var(--brown);
   border-radius: 10px;
   border: 1mm solid var(--brown);
   background-color: whitesmoke;
   color: var(--brown);
   font-size: 16px;
+  position: relative;
 }
 
 .review-section h2 {
@@ -26,35 +21,56 @@
   font-size: 32px;
   margin: 0px;
   padding: 24px 0px 20px 0px;
+  position: relative;
+  max-width: 350px;
+  margin-left: 28px;
 }
 
 .review-section h3 {
   color: var(--brown);
-  margin: 0px;
-  padding-bottom: 24px;
-  font-size: 16px;
-  text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach), 0 -1px var(--peach);
+  margin: -5% 0px 50px auto;
+  text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach),
+    0 -1px var(--peach);
+  position: absolute;
+  right: 50px;
+}
 
+.img-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: left;
+}
+
+.review-section img {
+  width: 350px;
+  margin-left: 50px;
+}
+
+.review-image {
+  display: flex;
+  flex: 1;
 }
 
 .review-body {
-  margin: 30px 40px 0px 40px;
+  margin: 16px 50px 0px 30px;
   text-align: justify;
-  padding: 0px 24px;
 }
 
 .one-line {
   text-align: right;
-  padding-right: 65px;
+  font-weight: 900;
+  margin: -200px 0px 0px 430px;
   color: var(--mint);
+  position: absolute;
+  right: 348px;
 }
 
 .vote-button {
   color: var(--brown);
   text-align: center;
-  margin-top: 2px;
-  margin-left: 66px;
-  margin-bottom: 38px;
+  margin: 26px 0px 38px -880px;
   background: var(--peach);
   border: none;
   font-size: 18px;
