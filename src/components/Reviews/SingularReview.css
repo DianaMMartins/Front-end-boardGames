@@ -41,30 +41,27 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: left;
+  margin-left: 50px;
 }
 
 .review-section img {
   width: 350px;
-  margin-left: 50px;
 }
 
-.review-image {
+.review-text {
   display: flex;
-  flex: 1;
-}
-
-.review-body {
-  margin: 16px 50px 0px 30px;
-  text-align: justify;
+  flex-direction: column;
+  margin: 0px 50px;
 }
 
 .one-line {
-  text-align: right;
+  text-align: left;
   font-weight: 900;
-  margin: -200px 0px 0px 430px;
   color: var(--mint);
-  position: absolute;
-  right: 348px;
+}
+
+.review-body {
+  text-align: justify;
 }
 
 .vote-button {

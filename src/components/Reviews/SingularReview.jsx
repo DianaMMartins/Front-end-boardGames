@@ -72,11 +72,13 @@ export const SingularReview = () => {
               <h3>Designed by: {singularReview.designer}</h3>
               <section className="img-content">
                 <img src={singularReview.review_img_url} alt="review" />
-                <p className="one-line">
-                  Written by: {singularReview.owner} on{" "}
-                  {new Date(singularReview.created_at).toDateString()}
-                </p>
-                <p className="review-body">{singularReview.review_body}</p>
+                <section className="review-text">
+                  <p className="one-line">
+                    Written by: {singularReview.owner} on{" "}
+                    {new Date(singularReview.created_at).toDateString()}
+                  </p>
+                  <p className="review-body">{singularReview.review_body}</p>
+                </section>
               </section>
 
               <button
