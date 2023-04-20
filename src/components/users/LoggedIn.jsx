@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 export const LoggedIn = ({ user, onLogout }) => {
-  console.log(user);
   return (
     <section className="loggedIn-page">
       {user.username === "" ? (

@@ -13,6 +13,7 @@ export const SingularReview = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { review_id } = useParams();
   const [voteButton, setVoteButton] = useState(false);
+  const [thumb, setThumb] = useState("👍");
 
   useEffect(() => {
     setIsLoading(true);
@@ -27,22 +28,26 @@ export const SingularReview = () => {
   const upVote = (review_id) => {
     if (voteButton === false) {
       setVoteButton(true);
+      setThumb("👎");
       setSingularReview((currentReview) => {
         return { ...currentReview, votes: currentReview.votes + 1 };
       });
       patchReviewVotes(review_id, 1).catch(() => {
         setVoteButton(false);
+        setThumb("👍");
         setSingularReview((currentReview) => {
           return { ...currentReview, votes: currentReview.votes - 1 };
         });
       });
     } else {
       setVoteButton(false);
+      setThumb("👍");
       setSingularReview((currentReview) => {
         return { ...currentReview, votes: currentReview.votes - 1 };
       });
       patchReviewVotes(review_id, -1).catch(() => {
         setVoteButton(true);
+        setThumb("👎");
         setSingularReview((currentReview) => {
           return { ...currentReview, votes: currentReview.votes + 1 };
         });
@@ -51,30 +56,38 @@ export const SingularReview = () => {
   };
 
   return (
-    <section className="review-box">
-      <h2 className="review">{singularReview.title}</h2>
+    <section className="review-page">
       {isLoading ? (
-        <img id="loading"
+        <img
+          id="loading"
           src={require(`../../images/loading.gif`)}
           alt="loading"
           width="250vw"
         />
       ) : (
         <section>
-          <h3>Designed by: {singularReview.designer}</h3>
-          <img src={singularReview.review_img_url} alt="review" />
-          <p className="review-body">{singularReview.review_body}</p>
-          <p className="review-writer">Written by: {singularReview.owner}</p>
-          <p className="date">
-            on {new Date(singularReview.created_at).toDateString()}
-          </p>
-          <p className="vote-button">
-            {singularReview.votes}
-            <button onClick={() => upVote(singularReview.review_id)}>
-              <span aria-label="votes for this review">❤️</span>
-            </button>
-          </p>
-          <Comments review_id={review_id} />
+          <section className="review-box">
+            <section className="review-section">
+              <h2>{singularReview.title}</h2>
+              <h3>Designed by: {singularReview.designer}</h3>
+              <img src={singularReview.review_img_url} alt="review" />
+              <p className="review-body">{singularReview.review_body}</p>
+              <p className="one-line">
+                Written by: {singularReview.owner} on{" "}
+                {new Date(singularReview.created_at).toDateString()}
+              </p>
+              <button
+                className="vote-button"
+                onClick={() => upVote(singularReview.review_id)}
+              >
+                <span aria-label="votes for this review">
+                  {singularReview.votes + ' '}  
+                  {' ' + thumb}
+                </span>
+              </button>
+            </section>
+            <Comments review_id={review_id} />
+          </section>
         </section>
       )}
     </section>
