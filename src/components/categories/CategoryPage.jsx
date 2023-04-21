@@ -20,10 +20,16 @@ export const CategoryPage = () => {
       });
   }, [category_slug]);
 
+  const improveTitle = (titleToChange) => {
+    const capitalizedTitle =
+      titleToChange.charAt(0).toUpperCase() + titleToChange.slice(1);
+    return capitalizedTitle.replace(/-/g, " ");
+  };
+
   return (
     <section className="category-page">
       <h3> Category:</h3>
-      <h4>{reviews.length > 0 ? reviews[0].category : "No reviews found."}</h4>
+      <h4>{reviews.length > 0 ? improveTitle(reviews[0].category) : "No reviews found."}</h4>
       {isLoading ? (
         <img
           id="loading"
