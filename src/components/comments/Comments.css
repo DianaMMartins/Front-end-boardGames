@@ -1,7 +1,18 @@
+.comments-list {
+    margin: 4vh 0;
+    padding: 0;
+    display: flex;
+    gap: 4vh;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    color: var(--brown);
+  }
+
 .comments h4 {
   font-family: var(--headerfont);
   color: var(--brown);
   font-size: 32px;
   margin: 0px;
-  padding: 24px 0px;
+  padding: 0px 0px 24px 0px;
 }

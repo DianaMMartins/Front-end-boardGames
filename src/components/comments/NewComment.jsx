@@ -2,6 +2,7 @@ import { useState } from "react";
 import { postCommentToReview } from "../../utils.js/apiCalls";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/Users";
+import './NewComment.css'
 
 export const NewComment = ({ review_id, setComments }) => {
   const [newComment, setNewComment] = useState("");
@@ -12,7 +13,7 @@ export const NewComment = ({ review_id, setComments }) => {
     body: newComment,
     username: user,
   };
-  
+
   console.log(user, commentToPost);
 
   const handleSubmit = (event) => {
