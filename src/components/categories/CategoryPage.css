@@ -1,0 +1,29 @@
+.category-page {
+  width: 60vw;
+  margin-left: 20.5%;
+}
+
+.category-page h3 {
+  font-family: var(--headerfont);
+  color: var(--brown);
+  font-size: 32px;
+  margin: 0px;
+  padding: 24px 0px 8px 0px;
+}
+
+.category-page h4 {
+  color: var(--brown);
+  font-size: 18px;
+  margin: 0px;
+  padding: 0;
+}
+
+.review-box {
+  padding: 0px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 3vh 1vw;
+  width: 100%;
+  margin: 30px 0px;
+  justify-content: center;
+}

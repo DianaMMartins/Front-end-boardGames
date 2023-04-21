@@ -1,7 +1,37 @@
+.comment-card {
+  width: inherit;
+  overflow: hidden;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 4px var(--brown);
+  border-radius: 10px;
+  border: 1mm solid var(--brown);
+}
+
 .singular-comment {
-    border: solid 1px black;
+  color: var(--brown);
+  font-size: 16px;
+  margin: 26px 50px;
+  text-align: left;
+}
+
+#comment-body {
+  text-align: justify;
+  margin: 3vh 0px 4vh 0px;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.comment-vote {
+  display: inline-flex;
+  font-size: 16px;
+  align-items: center;
+}
+.comment-vote button {
+  margin: 0px 10px 0 0;
+  padding: 0px 16px;
+  font-size: 22px;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }

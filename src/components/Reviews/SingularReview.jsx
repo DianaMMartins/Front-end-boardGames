@@ -23,8 +23,6 @@ export const SingularReview = () => {
     });
   }, [review_id]);
 
-  console.log(singularReview);
-
   const upVote = (review_id) => {
     if (voteButton === false) {
       setVoteButton(true);
@@ -68,23 +66,33 @@ export const SingularReview = () => {
         <section>
           <section className="review-box">
             <section className="review-section">
-              <h2>{singularReview.title}</h2>
-              <h3>Designed by: {singularReview.designer}</h3>
-              <img src={singularReview.review_img_url} alt="review" />
-              <p className="review-body">{singularReview.review_body}</p>
-              <p className="one-line">
-                Written by: {singularReview.owner} on{" "}
-                {new Date(singularReview.created_at).toDateString()}
-              </p>
-              <button
-                className="vote-button"
-                onClick={() => upVote(singularReview.review_id)}
-              >
-                <span aria-label="votes for this review">
-                  {singularReview.votes + ' '}  
-                  {' ' + thumb}
-                </span>
-              </button>
+              <section className="review-header">
+                <h2>{singularReview.title}</h2>
+                <h3>Game designed by: {singularReview.designer}</h3>
+              </section>
+
+              <section className="img-content">
+                <section className="img-box">
+                  <img src={singularReview.review_img_url} alt="review" />
+                </section>
+
+                <section className="review-text">
+                  <p className="review-body">{singularReview.review_body}</p>
+                  <p className="one-line">
+                    Review written by: {singularReview.owner} <br />
+                    on: {new Date(singularReview.created_at).toDateString()}
+                  </p>
+                </section>
+              </section>
+
+              <section className="vote-button">
+                <button onClick={() => upVote(singularReview.review_id)}>
+                  <span aria-label="votes for this review">
+                    {singularReview.votes + " "}
+                    {" " + thumb}
+                  </span>
+                </button>
+              </section>
             </section>
             <Comments review_id={review_id} />
           </section>
