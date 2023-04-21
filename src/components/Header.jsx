@@ -8,11 +8,13 @@ export const Header = () => {
     <header className="site-link">
       <Link to={"/"}>
         <section className="header">
-          <img className="logo" src={logo} alt="logo"/>
-          <h1>Board Game <br /> Reviews</h1>
-          </section>
-        <NavBar />
+          <img className="logo" src={logo} alt="logo" />
+          <h1>
+            Board Game <br /> Reviews
+          </h1>
+        </section>
       </Link>
+      <NavBar />
     </header>
   );
 };
