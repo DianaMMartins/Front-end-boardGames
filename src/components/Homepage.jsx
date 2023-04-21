@@ -6,7 +6,7 @@ export const Homepage = () => {
   return (
     <section className="homepage">
       <section className="homepage-categories">
-      <HomepageCategories />
+        <HomepageCategories />
       </section>
       <section className="homepage-reviews">
         <HomepageReviews />

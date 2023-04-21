@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from "../../contexts/Users";
-import './UserCard.css'
+import "./UserCard.css";
 
 export const UserCard = ({ eachUser }) => {
   const { setUser } = useContext(UserContext);
@@ -9,18 +9,24 @@ export const UserCard = ({ eachUser }) => {
     setUser(eachUser.username);
   };
 
+  //want to make the card the button
   return (
     <li className="user-li" key={eachUser.name}>
-      <section className="user-info ">
-        <h3>{eachUser.name}</h3>
-        <div className="user-image-container">
-        <img src={eachUser.avatar_url} alt="avatar"/>
-        </div>
-      </section>
-      <section className="button-section">
-      <button className="sign-in" onClick={handleClick}>
-        Sign in
-      </button>
+      <section className="login-card" onClick={handleClick}>
+      
+        <section className="user-info ">
+          <h3>{eachUser.name}</h3>
+
+          <section className="user-image-container">
+            <img src={eachUser.avatar_url} alt="avatar" />
+          </section>
+        </section>
+
+        <section className="button-section">
+          <button className="sign-in" >
+            Sign in
+          </button>
+        </section>
       </section>
     </li>
   );

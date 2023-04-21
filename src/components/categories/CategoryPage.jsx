@@ -29,7 +29,11 @@ export const CategoryPage = () => {
   return (
     <section className="category-page">
       <h3> Category:</h3>
-      <h4>{reviews.length > 0 ? improveTitle(reviews[0].category) : "No reviews found."}</h4>
+      <h4>
+        {reviews.length > 0
+          ? improveTitle(reviews[0].category)
+          : "No reviews found."}
+      </h4>
       {isLoading ? (
         <img
           id="loading"
@@ -44,7 +48,7 @@ export const CategoryPage = () => {
               to={`/reviews/${eachReview.review_id}`}
               key={eachReview.review_id}
             >
-              <ReviewCard eachReview={eachReview}/>
+              <ReviewCard eachReview={eachReview} />
             </Link>
           ))}
         </ul>

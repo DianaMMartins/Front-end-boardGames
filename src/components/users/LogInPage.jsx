@@ -3,13 +3,15 @@ import { UserCard } from "./UserCard";
 import { getUsers } from "../../utils.js/apiCalls";
 import { UserContext } from "../../contexts/Users";
 import { LoggedIn } from "./LoggedIn";
-import './LogInPage.css'
+import "./LogInPage.css";
 
 export const Users = () => {
   const [users, setUsers] = useState([]);
   const { user, logout } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
-  const matchingUser = users.find((ifUserIsSame) => ifUserIsSame.username === user);
+  const matchingUser = users.find(
+    (ifUserIsSame) => ifUserIsSame.username === user
+  );
 
   useEffect(() => {
     const fetchData = async () => {
