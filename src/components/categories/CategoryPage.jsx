@@ -3,12 +3,15 @@ import { useEffect } from "react";
 import { getReviewByParametric } from "../../utils.js/apiCalls";
 import { ReviewCard } from "../Reviews/ReviewCard";
 import { useParams } from "react-router-dom";
+import "./CategoryPage.css";
 
 export const CategoryPage = () => {
   const { category_slug } = useParams();
   const [category, setCategory] = useState("");
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  console.log(category, reviews);
 
   useEffect(() => {
     setIsLoading(true);
@@ -32,7 +35,6 @@ export const CategoryPage = () => {
         />
       ) : (
         <ul className="review-box">
-          hi
           {reviews.map((eachReview) => {
             return (
               <ReviewCard eachReview={eachReview} key={eachReview.review_id} />

@@ -1,3 +1,30 @@
 .post-comment {
-    color: var(--brown);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  box-shadow: 0px 0px 4px var(--brown);
+  border-radius: 10px;
+  border: 1mm solid var(--brown);
+  background-color: whitesmoke;
+  color: var(--brown);
+  font-size: 16px;
+}
+
+.post-comment label {
+  align-self: flex-start;
+}
+
+#new-comment {
+  width: -moz-available;
+  border: 1mm solid var(--brown);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 0;
+  min-height: 60px;
+}
+
+.post-comment button {
+  width: fit-content;
+  padding: 10px;
+  align-self: center;
 }
