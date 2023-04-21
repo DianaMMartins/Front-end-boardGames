@@ -1,0 +1,7 @@
+.comments h4 {
+  font-family: var(--headerfont);
+  color: var(--brown);
+  font-size: 32px;
+  margin: 0px;
+  padding: 24px 0px;
+}

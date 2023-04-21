@@ -68,23 +68,23 @@ export const SingularReview = () => {
         <section>
           <section className="review-box">
             <section className="review-section">
-
               <section className="review-header">
                 <h2>{singularReview.title}</h2>
-                <h3>Designed by: {singularReview.designer}</h3>
+                <h3>Game designed by: {singularReview.designer}</h3>
               </section>
 
               <section className="img-content">
-                <img src={singularReview.review_img_url} alt="review" />
-               
-                <section className="review-text">
-                  <p className="one-line">
-                    Written by: {singularReview.owner} on{" "}
-                    {new Date(singularReview.created_at).toDateString()}
-                  </p>
-                  <p className="review-body">{singularReview.review_body}</p>
+                <section className="img-box">
+                  <img src={singularReview.review_img_url} alt="review" />
                 </section>
-                
+
+                <section className="review-text">
+                  <p className="review-body">{singularReview.review_body}</p>
+                  <p className="one-line">
+                    Review written by: {singularReview.owner} <br />
+                    on: {new Date(singularReview.created_at).toDateString()}
+                  </p>
+                </section>
               </section>
 
               <section className="vote-button">
@@ -95,7 +95,6 @@ export const SingularReview = () => {
                   </span>
                 </button>
               </section>
-
             </section>
             <Comments review_id={review_id} />
           </section>
