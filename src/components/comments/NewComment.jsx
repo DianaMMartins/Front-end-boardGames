@@ -14,8 +14,6 @@ export const NewComment = ({ review_id, setComments }) => {
     username: user,
   };
 
-  console.log(user, commentToPost);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     if (

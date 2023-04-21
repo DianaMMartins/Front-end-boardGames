@@ -13,7 +13,6 @@ export const Comments = ({ review_id }) => {
     });
   }, [review_id]);
 
-  console.log(comments);
   return (
     <section className="comments">
       <h4>Comment section</h4>

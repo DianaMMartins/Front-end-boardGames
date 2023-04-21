@@ -23,8 +23,6 @@ export const SingularReview = () => {
     });
   }, [review_id]);
 
-  console.log(singularReview);
-
   const upVote = (review_id) => {
     if (voteButton === false) {
       setVoteButton(true);
