@@ -1,11 +1,11 @@
-.review-box {
+.review-page {
   width: 59.9vw;
   margin-left: 20.4%;
 }
 
 .review-section {
   width: 100%;
-  margin: 30px 0px 14vh 0px;
+  margin: 40px 0px 3vh 0px;
   box-shadow: 0px 0px 4px var(--brown);
   border-radius: 10px;
   border: 1mm solid var(--brown);
@@ -15,37 +15,40 @@
   position: relative;
 }
 
+.review-header {
+  margin: 16px 50px 16px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .review-section h2 {
   font-family: var(--headerfont);
   color: var(--brown);
   font-size: 32px;
   margin: 0px;
-  padding: 24px 0px 20px 0px;
+  padding: 0px;
   position: relative;
   max-width: 350px;
-  margin-left: 28px;
 }
 
 .review-section h3 {
   color: var(--brown);
-  margin: -5% 0px 50px auto;
   text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach),
     0 -1px var(--peach);
-  position: absolute;
-  right: 50px;
 }
 
 .img-content {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
   justify-content: left;
   margin-left: 50px;
 }
 
 .review-section img {
   width: 350px;
+  border-radius: 10px;
 }
 
 .review-text {
@@ -58,16 +61,17 @@
   text-align: left;
   font-weight: 900;
   color: var(--mint);
+  margin-top: 0px;
 }
 
 .review-body {
   text-align: justify;
+  margin-top: 0;
 }
 
-.vote-button {
+.vote-button button {
   color: var(--brown);
   text-align: center;
-  margin: 26px 0px 38px -880px;
   background: var(--peach);
   border: none;
   font-size: 18px;
@@ -75,6 +79,7 @@
   padding: 8px 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 6px var(--brown);
+  margin: 30px 52px;
 }
 
 .vote-button:hover {
