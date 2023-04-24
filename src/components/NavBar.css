@@ -9,13 +9,18 @@ nav {
   align-items: center;
   justify-content: center;
   font-family: var(--headerfont);
-  padding-left: 13px;
 }
 
-.nav p {
+.divisor {
+  width: 1mm;
+  height: 54px;
+  background-color: var(--peach);
+}
+
+.link {
   color: var(--peach);
   font-size: 22px;
-  padding: 14px 128px;
+  padding: 14px 7vw;
 }
 
 .nav button {
@@ -25,6 +30,13 @@ nav {
   background: none;
   font-size: 22px;
   padding: 14px 128px;
+}
+
+.link:hover  p{
+  font-size: 24px;
+  background: var(--peach);
+  color: var(--brown);
+
 }
 
 /* #no-border {
@@ -37,4 +49,18 @@ nav {
   border-left: 1mm solid var(--peach);
 } */
 
-
+@media screen and (max-width: 600px) {
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    background: var(--brown);
+    height: auto;
+  }
+  .nav p {
+    margin: 0px;
+    font-size: 18px;
+  }
+  .divisor{
+    display: none;
+  }
+}

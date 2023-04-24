@@ -1,7 +1,11 @@
+.site-link {
+  background-color: var(--peach);
+  height: 35vh;
+}
+
 .header {
   margin: 0px;
   height: 30vh;
-  background-color: var(--peach);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,4 +29,12 @@
   width: 20vw;
   height: auto;
   margin-top: 10px;
+}
+@media screen and (max-width: 600px){
+  .header{
+    flex-direction: column;
+  }
+  .header h1{
+    font-size: 7vw;
+  }
 }

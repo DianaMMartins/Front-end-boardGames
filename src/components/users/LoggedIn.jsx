@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { memo } from "react";
 import "./LoggedIn.css";
 
-export const LoggedIn = ({ user, onLogout }) => {
+export const LoggedIn = memo(({ user, onLogout }) => {
+  console.log(user);
   return (
     <section className="loggedIn-page">
       {user.username === "" ? (
@@ -10,11 +12,14 @@ export const LoggedIn = ({ user, onLogout }) => {
           <Link to={"/users"}>Click here to log in</Link>
         </section>
       ) : (
-        <section>
-          <h3>Logged in as {user.name}</h3>
-          <button onClick={onLogout}>Log out!</button>
+        <section className="logged-user-card">
+          <h3>Welcome back {user.name}!</h3>
+          <section className="image">
+            <img src={user.avatar_url} alt="user" />
+          </section>
+          <button className="logout-button" onClick={onLogout}>Log out</button>
         </section>
       )}
     </section>
   );
-};
+});

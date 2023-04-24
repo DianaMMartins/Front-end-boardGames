@@ -8,21 +8,25 @@ export const NavBar = () => {
 
   return (
     <nav className="nav">
-      <Link to={`/reviews`} className="Link">
+      <div className="divisor"></div>
+      <Link to={`/reviews`} className="link">
         <p id="border">Reviews</p>
       </Link>
-      <Link to={`/categories`} className="Link">
+      <div className="divisor"></div>
+      <Link to={`/categories`} className="link">
         <p id="no-border">Categories</p>
       </Link>
+      <div className="divisor"></div>
       {user.username !== "" ? (
         <button id="border" onClick={logout}>
           Log out
         </button>
       ) : (
-        <Link to={`/users`} className="Link">
+        <Link to={`/users`} className="link">
           <p id="border">Log in</p>
         </Link>
       )}
+      <div className="divisor"></div>
     </nav>
   );
 };

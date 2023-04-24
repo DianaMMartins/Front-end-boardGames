@@ -1,0 +1,55 @@
+.loggedIn-page {
+  font-family: var(--headerfont);
+}
+
+.logged-user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 32px;
+  color: var(--brown);
+  gap: 40px 0px;
+}
+
+h3 {
+  margin: 30px 0 0 0;
+}
+
+.image {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  background: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1mm solid var(--brown);
+}
+
+.image img {
+  width: 250px;
+  max-width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.logout-button {
+  color: var(--brown);
+  text-align: center;
+  background: var(--peach);
+  border: none;
+  font-size: 22px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px var(--brown);
+}
+
+.logout-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 2px var(--brown);
+  color: var(--peach);
+  background-color: var(--brown);
+}
