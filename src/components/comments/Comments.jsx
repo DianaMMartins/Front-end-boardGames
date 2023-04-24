@@ -30,7 +30,7 @@ export const Comments = memo(({ review_id }) => {
             );
           })
         ) : (
-          <p> No comments found ... </p>
+          <p id="no-comments"> No comments found ... </p>
         )}
       </ul>
     </section>

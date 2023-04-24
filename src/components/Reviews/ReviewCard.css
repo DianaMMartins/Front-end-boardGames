@@ -53,23 +53,6 @@
   opacity: 0.5;
 }
 
-a:link {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-  font-weight: 600;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
-}
-
 @media (max-width: 400px) {
   .review-card {
     width: 280px;

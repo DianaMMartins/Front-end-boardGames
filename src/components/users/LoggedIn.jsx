@@ -13,7 +13,7 @@ export const LoggedIn = memo(({ user, onLogout }) => {
         </section>
       ) : (
         <section className="logged-user-card">
-          <h3>Welcome back {user.name}!</h3>
+          <h3 id="logged-in-header">Welcome back {user.name}!</h3>
           <section className="image">
             <img src={user.avatar_url} alt="user" />
           </section>

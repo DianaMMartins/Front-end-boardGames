@@ -42,7 +42,7 @@ export const HomepageCategories = () => {
   return (
     <section className="categories">
       <section className="section-categories">
-        <h3 id="categories-header">Categories</h3>
+        <h3 id="homepage-categories-header">Categories</h3>
         <Link to={"/categories"}>
           <h4 className="more-categories">See all</h4>
         </Link>

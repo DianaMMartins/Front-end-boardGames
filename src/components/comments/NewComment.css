@@ -33,7 +33,7 @@
 .post-comment button {
   background: var(--peach);
   color: var(--brown);
-  margin: 30px 44%;
+  margin: 26px 44% 10px 44%;
   padding: 8px 20px;
   width: -moz-fit-content;
   width: fit-content;

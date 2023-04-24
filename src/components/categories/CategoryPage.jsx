@@ -28,12 +28,11 @@ export const CategoryPage = () => {
 
   return (
     <section className="category-page">
-      <h3> Category:</h3>
-      <h4>
+      <h2>
         {reviews.length > 0
           ? improveTitle(reviews[0].category)
           : "No reviews found."}
-      </h4>
+      </h2>
       {isLoading ? (
         <img
           id="loading"

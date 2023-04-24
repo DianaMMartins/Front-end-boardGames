@@ -8,7 +8,7 @@
   color: var(--brown);
   font-size: 32px;
   margin: 0px;
-  padding: 24px 0px;
+  padding: 40px 0px 24px 0px;
 }
 
 .users-section {
@@ -20,6 +20,7 @@
   flex-wrap: wrap;
   padding-left: 0px;
   gap: 24px 16px;
+  margin: 0;
 }
 
 .user-li {

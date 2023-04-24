@@ -15,8 +15,7 @@
   padding-left: 0px;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 4vh 1vw;
   margin: 0px 0px 14vh 0px;
 }
@@ -40,20 +39,4 @@
 .more-reviews:hover {
   cursor: pointer;
   font-size: 27px;
-}
-a:link {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-  font-weight: 600;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
 }

@@ -5,7 +5,7 @@
 
 .review-section {
   width: 100%;
-  margin: 40px 0px 3vh 0px;
+  margin: 50px 0px 1vh 0px;
   box-shadow: 0px 0px 4px var(--brown);
   border-radius: 10px;
   border: 1mm solid var(--brown);
@@ -64,7 +64,7 @@
 .one-line {
   text-align: left;
   font-weight: 900;
-  color: var(--mint);
+  color: var(--brown);
   margin-top: 0px;
 }
 
@@ -73,6 +73,7 @@
   margin-top: 0;
   width: 100%;
   font-style: italic;
+  min-width: 578px;
 }
 
 .vote-button button {
@@ -81,14 +82,15 @@
   background: var(--peach);
   border: none;
   font-size: 18px;
-  width: 90px;
-  padding: 8px 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 24px;
   border-radius: 10px;
   box-shadow: 0px 0px 6px var(--brown);
-  margin: 30px 52px;
+  margin: 20px 0 40px 0;
 }
 
-.vote-button:hover {
+.vote-button button:hover {
   box-shadow: 0px 0px 2px var(--brown);
   cursor: pointer;
 }
