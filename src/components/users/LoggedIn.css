@@ -29,6 +29,7 @@ h3 {
   align-items: center;
   justify-content: center;
   border: 1mm solid var(--brown);
+  box-shadow: 0px 0px 4px var(--brown);
 }
 
 .image img {

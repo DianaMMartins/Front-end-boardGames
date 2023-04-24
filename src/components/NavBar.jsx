@@ -18,12 +18,14 @@ export const NavBar = () => {
       </Link>
       <div className="divisor"></div>
       {user.username !== "" ? (
-        <button id="border" onClick={logout}>
-          Log out
-        </button>
+        <section className="nav-logout">
+          <button className="link" onClick={logout}>
+            Log out
+          </button>
+        </section>
       ) : (
         <Link to={`/users`} className="link">
-          <p id="border">Log in</p>
+          <p className="link">Log in</p>
         </Link>
       )}
       <div className="divisor"></div>

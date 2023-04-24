@@ -9,7 +9,6 @@ export const UserCard = ({ eachUser }) => {
     setUser(eachUser.username);
   };
 
-  //want to make the card the button
   return (
     <li className="user-li" key={eachUser.name}>
       <section className="login-card" onClick={handleClick}>

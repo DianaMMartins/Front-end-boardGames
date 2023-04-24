@@ -5,10 +5,11 @@ nav {
 
 .nav {
   height: 54px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--headerfont);
+  padding: 0px 0px 0px 13px;
 }
 
 .divisor {
@@ -20,10 +21,11 @@ nav {
 .link {
   color: var(--peach);
   font-size: 22px;
-  padding: 14px 7vw;
+  width: 19.8vw;
 }
 
 .nav button {
+  cursor: pointer;
   border: none;
   font: inherit;
   color: var(--peach);
@@ -32,22 +34,22 @@ nav {
   padding: 14px 128px;
 }
 
-.link:hover  p{
-  font-size: 24px;
+.nav-logout button:hover {
+  z-index: 10;
+  font-size: 26px;
+  color: var(--brown);
+  background: var(--peach);
+  padding: 12px 0px;
+  font-weight: 900;
+}
+
+.link:hover p {
+  font-size: 26px;
   background: var(--peach);
   color: var(--brown);
-
-}
-
-/* #no-border {
-  border: none;
-  padding: 14px 128px;
-}
-
-#border {
-  border-right: 1mm solid var(--peach);
-  border-left: 1mm solid var(--peach);
-} */
+  padding: 12px 0px;
+  font-weight: 900;
+ }
 
 @media screen and (max-width: 600px) {
   .nav {
@@ -60,7 +62,7 @@ nav {
     margin: 0px;
     font-size: 18px;
   }
-  .divisor{
+  .divisor {
     display: none;
   }
 }
