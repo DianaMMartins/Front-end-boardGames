@@ -1,6 +1,7 @@
 import "./SingularComment.css";
+import { memo } from "react";
 
-export const SingularComment = ({ eachComment }) => {
+export const SingularComment = memo(({ eachComment }) => {
   return (
     <section className="comment-card">
       <li className="singular-comment">
@@ -20,4 +21,4 @@ export const SingularComment = ({ eachComment }) => {
       </li>
     </section>
   );
-};
+});

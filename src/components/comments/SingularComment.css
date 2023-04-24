@@ -28,8 +28,16 @@
 }
 .comment-vote button {
   margin: 0px 10px 0 0;
-  padding: 0px 16px;
-  font-size: 22px;
+  padding: 4px 14px;
+  background: var(--peach);
+  color: var(--brown);
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px var(--brown);
 }
 
 li {

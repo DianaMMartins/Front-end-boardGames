@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import { SingularComment } from "./SingularComment";
 import { NewComment } from "./NewComment";
 import "./Comments.css";
+import {memo} from 'react';
 
-export const Comments = ({ review_id }) => {
+
+export const Comments = memo(({ review_id }) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -33,4 +35,4 @@ export const Comments = ({ review_id }) => {
       </ul>
     </section>
   );
-};
+})

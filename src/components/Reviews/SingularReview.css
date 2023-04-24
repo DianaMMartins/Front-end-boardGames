@@ -71,7 +71,8 @@
 .review-body {
   text-align: justify;
   margin-top: 0;
-  width: 573.4px;
+  width: 100%;
+  font-style: italic;
 }
 
 .vote-button button {
@@ -90,4 +91,19 @@
 .vote-button:hover {
   box-shadow: 0px 0px 2px var(--brown);
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1320px) {
+  .review-section {
+    margin: 0;
+    width: 90vw;
+    height: inherit;
+  }
+  .img-content {
+    margin: 0px;
+    flex-wrap: wrap;
+  }
+  .img-box img{
+    width: 90%;
+  }
 }

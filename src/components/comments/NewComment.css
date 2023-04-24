@@ -21,11 +21,25 @@
   padding: 16px;
   margin: 0;
   min-height: 60px;
+  font-size: 16px;
+}
+
+#new-comment:focus {
+  border: 1mm solid var(--peach);
+  outline: none;
+  color: var(--brown);
 }
 
 .post-comment button {
+  background: var(--peach);
+  color: var(--brown);
+  margin: 30px 44%;
+  padding: 8px 20px;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 10px;
-  align-self: center;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px var(--brown);
 }

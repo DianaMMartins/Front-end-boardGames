@@ -1,54 +1,58 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useCallback, useEffect,useState } from "react";
 import { getReviewByReviewId, patchReviewVotes } from "../../utils/apiCalls";
 import { useParams } from "react-router-dom";
 import "./SingularReview.css";
 import { Comments } from "../comments/Comments";
 
 export const SingularReview = () => {
-  const [singularReview, setSingularReview] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
   const { review_id } = useParams();
+  const [isLoading, setIsLoading] = useState(false);
   const [voteButton, setVoteButton] = useState(false);
+  const [singularReview, setSingularReview] = useState({});
   const [thumb, setThumb] = useState("👍");
+  const [error, setError] = useState(null);
+  const {
+    title,
+    designer,
+    review_img_url,
+    review_body,
+    owner,
+    created_at,
+    votes,
+  } = singularReview;
 
   useEffect(() => {
-    setIsLoading(true);
-    getReviewByReviewId(review_id).then((eachReview) => {
+    const fetchReview = async () => {
+      setIsLoading(true);
+      const eachReview = await getReviewByReviewId(review_id);
       setSingularReview(eachReview.review);
       setIsLoading(false);
-    });
+    };
+    fetchReview();
   }, [review_id]);
 
-  const upVote = (review_id) => {
-    if (voteButton === false) {
-      setVoteButton(true);
-      setThumb("👎");
-      setSingularReview((currentReview) => {
-        return { ...currentReview, votes: currentReview.votes + 1 };
-      });
-      patchReviewVotes(review_id, 1).catch(() => {
-        setVoteButton(false);
-        setThumb("👍");
-        setSingularReview((currentReview) => {
-          return { ...currentReview, votes: currentReview.votes - 1 };
-        });
-      });
-    } else {
-      setVoteButton(false);
-      setThumb("👍");
-      setSingularReview((currentReview) => {
-        return { ...currentReview, votes: currentReview.votes - 1 };
-      });
-      patchReviewVotes(review_id, -1).catch(() => {
+  const upVote = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      if (voteButton === false) {
         setVoteButton(true);
         setThumb("👎");
-        setSingularReview((currentReview) => {
-          return { ...currentReview, votes: currentReview.votes + 1 };
-        });
-      });
+        singularReview.votes += 1;
+        await patchReviewVotes(review_id, 1);
+      } else {
+        setVoteButton(false);
+        setThumb("👍");
+        singularReview.votes -= 1;
+        await patchReviewVotes(review_id, -1);
+      }
+    } catch (error) {
+      console.error(error);
+      setError("Error updating review.");
+    } finally {
+      setIsLoading(false);
     }
-  };
+  }, [review_id, voteButton, singularReview]);
+ 
 
   return (
     <section className="review-page">
@@ -59,33 +63,36 @@ export const SingularReview = () => {
           alt="loading"
           width="250vw"
         />
+      ) : error ? (
+        <p>{error}</p>
       ) : (
         <section>
           <section className="review-box">
+            
             <section className="review-section">
               <section className="review-header">
-                <h2>{singularReview.title}</h2>
-                <h3>Game designed by: {singularReview.designer}</h3>
+                <h2>{title}</h2>
+                <h3>Game designed by: {designer}</h3>
               </section>
 
               <section className="img-content">
                 <section className="img-box">
-                  <img src={singularReview.review_img_url} alt="review" />
+                  <img src={review_img_url} alt="review" />
                 </section>
 
                 <section className="review-text">
-                  <p className="review-body">{singularReview.review_body}</p>
+                  <p className="review-body">{review_body}</p>
                   <p className="one-line">
-                    Review written by: {singularReview.owner} <br />
-                    on: {new Date(singularReview.created_at).toDateString()}
+                    Review written by: {owner} <br />
+                    on: {new Date(created_at).toDateString()}
                   </p>
                 </section>
               </section>
 
               <section className="vote-button">
-                <button onClick={() => upVote(singularReview.review_id)}>
+                <button onClick={() => upVote(review_id)}>
                   <span aria-label="votes for this review">
-                    {singularReview.votes + " "}
+                    {votes + " "}
                     {" " + thumb}
                   </span>
                 </button>

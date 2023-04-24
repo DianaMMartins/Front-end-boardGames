@@ -40,6 +40,8 @@ export const NewComment = ({ review_id, setComments }) => {
     }
   };
 
+  
+
   return (
     <form className="post-comment" onSubmit={handleSubmit}>
       <label htmlFor="new-comment">Comment on this review: </label>
@@ -49,8 +51,6 @@ export const NewComment = ({ review_id, setComments }) => {
           value={newComment}
           placeholder={placeholder}
           disabled={!submitButton}
-          rows="10"
-          cols="50"
           onChange={(event) => setNewComment(event.target.value)}
         />
       </p>
