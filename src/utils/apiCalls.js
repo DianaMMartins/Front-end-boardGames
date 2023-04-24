@@ -15,7 +15,7 @@ export const getUsers = () => {
   });
 };
 
-export const getReviewByParametric = (review_id) => {
+export const getReviewByReviewId = (review_id) => {
   return boardGamesApi.get(`/reviews/${review_id}`).then(({ data }) => {
     return data;
   });

@@ -1,18 +1,15 @@
-// import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/Header";
-import { ReviewsPage } from "./components/Reviews/ReviewsPage";
+import {ReviewsPage} from "./components/Reviews/ReviewsPage";
 import { SingularReview } from "./components/Reviews/SingularReview";
 import { Homepage } from "./components/Homepage";
 import { Users } from "./components/users/LogInPage";
-// import { UserContext } from "./contexts/Users";
-// import { LoggedIn } from "./components/users/LoggedIn";
+
 import { Categories } from "./components/categories/Categories";
 import { CategoryPage } from "./components/categories/CategoryPage";
 
 function App() {
-  // const { user, logout } = useContext(UserContext);
 
   return (
     <div className="App">

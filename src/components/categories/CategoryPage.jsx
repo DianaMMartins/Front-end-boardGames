@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getReviewByParametric } from "../../utils.js/apiCalls";
+import { getReviewByReviewId } from "../../utils/apiCalls";
 import { ReviewCard } from "../Reviews/ReviewCard";
 import { Link, useParams } from "react-router-dom";
 import "./CategoryPage.css";
@@ -11,7 +11,7 @@ export const CategoryPage = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getReviewByParametric(category_slug)
+    getReviewByReviewId(category_slug)
       .then((reviewsFromApi) => {
         setReviews(reviewsFromApi);
       })

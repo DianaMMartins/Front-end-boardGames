@@ -1,33 +1,42 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getCategories } from "../../utils.js/apiCalls";
+import { getCategories } from "../../utils/apiCalls";
 import { CategoryCard } from "./CategoryCard";
 import "./HomepageCategories.css";
 
 export const HomepageCategories = () => {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setIsLoading(true);
-    getCategories().then((categoriesFromApi) => {
-      const homeCategories = [];
-      const noRepeats = [];
+    const fetchCategories = async () => {
+      try {
+        setIsLoading(true);
+        const categoriesFromApi = await getCategories();
+        const homeCategories = [];
+        const noRepeats = [];
 
-      while (noRepeats.length < 5) {
-        let random = Math.ceil(Math.random() * categoriesFromApi.length);
+        while (noRepeats.length < 5) {
+          let random = Math.ceil(Math.random() * categoriesFromApi.length);
 
-        if (!noRepeats.includes(random)) {
-          const eachCategory = categoriesFromApi[random];
-          if (eachCategory !== undefined) {
-            noRepeats.push(random);
-            homeCategories.push(eachCategory);
+          if (!noRepeats.includes(random)) {
+            const eachCategory = categoriesFromApi[random];
+            if (eachCategory !== undefined) {
+              noRepeats.push(random);
+              homeCategories.push(eachCategory);
+            }
           }
         }
+        setCategories(homeCategories);
+        setIsLoading(false);
+      } catch (error) {
+        console.error(error);
+        setError("Error fetching categories.");
+        setIsLoading(false);
       }
-      setCategories(homeCategories);
-      setIsLoading(false);
-    });
+    };
+    fetchCategories();
   }, []);
 
   return (
@@ -45,6 +54,8 @@ export const HomepageCategories = () => {
           alt="loading"
           width="250vw"
         />
+      ) : error ? (
+        <p>{error}</p>
       ) : (
         <ul className="categories-container">
           {categories.map((eachCategory) => {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { getCategories } from "../../utils.js/apiCalls";
+import { getCategories } from "../../utils/apiCalls";
 import { CategoryCard } from "./CategoryCard";
-import './Categories.css'
+import "./Categories.css";
 
 //displays all category cards that exist
 export const Categories = () => {
@@ -21,7 +21,7 @@ export const Categories = () => {
       <h3 id="categories-header">Categories</h3>
       {isLoading ? (
         <img
-        id="loading"
+          id="loading"
           src={require(`../../images/loading.gif`)}
           alt="loading"
           width="250vw"

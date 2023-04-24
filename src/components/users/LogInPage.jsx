@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { UserCard } from "./UserCard";
-import { getUsers } from "../../utils.js/apiCalls";
+import { getUsers } from "../../utils/apiCalls";
 import { UserContext } from "../../contexts/Users";
 import { LoggedIn } from "./LoggedIn";
 import "./LogInPage.css";

@@ -27,12 +27,14 @@ nav {
   padding: 14px 128px;
 }
 
-#no-border {
+/* #no-border {
   border: none;
-  padding: auto 128px;
+  padding: 14px 128px;
 }
 
 #border {
   border-right: 1mm solid var(--peach);
   border-left: 1mm solid var(--peach);
-}
+} */
+
+

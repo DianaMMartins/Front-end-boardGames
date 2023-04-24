@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getReviews } from "../../utils.js/apiCalls";
+import { getReviews } from "../../utils/apiCalls";
 import { ReviewCard } from "./ReviewCard";
 import { Link } from "react-router-dom";
 import "./ReviewsPage.css";
@@ -7,13 +7,22 @@ import "./ReviewsPage.css";
 export const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [error, setError] = useState(null);
+  
   useEffect(() => {
-    setIsLoading(true);
-    getReviews().then((reviewsData) => {
-      setReviews(reviewsData);
-      setIsLoading(false);
-    });
+    const fetchReviews = async () => {
+      setIsLoading(true);
+      try {
+        const reviewsFromApi = await getReviews();
+        setReviews(reviewsFromApi);
+      } catch (error) {
+        console.error(error);
+        setError("Error fetching reviews.")
+      } finally {
+        setIsLoading(false);
+      } 
+    }
+    fetchReviews();
   }, []);
 
   return (
@@ -26,7 +35,9 @@ export const ReviewsPage = () => {
           alt="loading"
           width="250vw"
         />
-      ) : (
+        ) : error ? (
+          <p>{error}</p>
+        ) : (
         <ul className="review-container">
           {reviews.map((eachReview) => {
             return (

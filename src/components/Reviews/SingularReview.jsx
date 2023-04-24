@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import {
-  getReviewByParametric,
-  patchReviewVotes,
-} from "../../utils.js/apiCalls";
+import { getReviewByReviewId, patchReviewVotes } from "../../utils/apiCalls";
 import { useParams } from "react-router-dom";
 import "./SingularReview.css";
 import { Comments } from "../comments/Comments";
@@ -17,7 +14,7 @@ export const SingularReview = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getReviewByParametric(review_id).then((eachReview) => {
+    getReviewByReviewId(review_id).then((eachReview) => {
       setSingularReview(eachReview.review);
       setIsLoading(false);
     });

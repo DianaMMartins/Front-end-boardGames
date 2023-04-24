@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "./CategoryCard.css";
+import {memo} from 'react';
 
-export const CategoryCard = ({ eachCategory }) => {
+export const CategoryCard =  memo (({ eachCategory }) => {
   const improveTitle = (titleToChange) => {
     const capitalizedTitle =
       titleToChange.charAt(0).toUpperCase() + titleToChange.slice(1);
@@ -18,4 +19,4 @@ export const CategoryCard = ({ eachCategory }) => {
       </Link>
     </li>
   );
-};
+})

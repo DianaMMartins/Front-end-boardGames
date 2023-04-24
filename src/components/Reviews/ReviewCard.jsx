@@ -1,5 +1,7 @@
+import { memo } from "react";
 import "./ReviewCard.css";
-export const ReviewCard = ({ eachReview }) => {
+
+export const ReviewCard = memo(({ eachReview }) => {
   return (
     <li className="review-card" key={eachReview.review_id}>
       <img src={eachReview.review_img_url} alt={`${eachReview.title}`} />
@@ -9,4 +11,4 @@ export const ReviewCard = ({ eachReview }) => {
       </div>
     </li>
   );
-};
+});

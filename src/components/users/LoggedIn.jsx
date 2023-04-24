@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./LoggedIn.css";
 
 export const LoggedIn = ({ user, onLogout }) => {
   return (
