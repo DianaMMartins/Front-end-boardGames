@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getReviewByReviewId } from "../../utils/apiCalls";
 import { ReviewCard } from "../Reviews/ReviewCard";
 import { Link, useParams } from "react-router-dom";
+import { reviewTitle } from "../../utils/reviewTitle.js";
 import "./CategoryPage.css";
 
 export const CategoryPage = () => {
@@ -20,17 +21,11 @@ export const CategoryPage = () => {
       });
   }, [category_slug]);
 
-  const improveTitle = (titleToChange) => {
-    const capitalizedTitle =
-      titleToChange.charAt(0).toUpperCase() + titleToChange.slice(1);
-    return capitalizedTitle.replace(/-/g, " ");
-  };
-
   return (
     <section className="category-page">
       <h2>
         {reviews.length > 0
-          ? improveTitle(reviews[0].category)
+          ? "Category: " + reviewTitle(reviews[0].category)
           : "No reviews found."}
       </h2>
       {isLoading ? (
