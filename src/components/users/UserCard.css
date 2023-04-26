@@ -16,6 +16,7 @@
     0 -1px var(--peach);
   z-index: 1;
   position: relative;
+  transition: all 0.1s ease-in-out;
 }
 
 .user-info img {
@@ -48,6 +49,7 @@
   font-family: var(--headerfont);
   color: var(--peach);
   font-size: 22px;
+  transition: all 0.1s ease-in-out;
 }
 
 .login-card:hover {
@@ -62,4 +64,9 @@
   font-size: 32px;
   cursor: pointer;
   padding-top: 0px;
+}
+
+.user-info:hover h3 {
+  font-size: 27px;
+  margin: 4px 0 4px 0;
 }

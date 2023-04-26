@@ -1,9 +1,5 @@
-nav {
-  width: 100%;
-  background-color: var(--brown);
-}
-
 .nav {
+  background-color: var(--brown);
   height: 54px;
   display: flex;
   align-items: center;
@@ -31,7 +27,6 @@ nav {
   color: var(--peach);
   background: none;
   font-size: 22px;
-  padding: 14px 128px;
 }
 
 .nav-logout button:hover {

@@ -9,6 +9,7 @@
 
 body {
   background-image: url("./images/background.jpg");
+  background-repeat: round;
 }
 
 .App {
@@ -32,6 +33,7 @@ box-shadow: 0px 0px 6px var(--brown);
 
 #loading {
   margin-top: 100px;
+  margin-bottom: 4vh;
 }
 
 a:link {
