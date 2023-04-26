@@ -9,6 +9,7 @@
   font-size: 32px;
   color: var(--brown);
   gap: 40px 0px;
+  margin-bottom: 4vh;
 }
 
 #logged-in-header{
@@ -37,6 +38,11 @@ h3 {
   max-width: 250px;
   height: 250px;
   object-fit: contain;
+}
+
+.nav-logout {
+  width: 19.8vw;
+  display: inline-flex;
 }
 
 .logout-button {

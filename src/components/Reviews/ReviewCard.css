@@ -30,18 +30,26 @@
 }
 
 .review-intro h4 {
-  margin: 14px 6px 12px 5px;
+  margin: 16px 10px 6px 10px;
 }
 
 .review-intro p {
-  margin: 0vh;
-  font-size: 1vw;
+  margin: 0;
+  font-size: 18px;
 }
 
 .review-card:hover .review-intro {
   top: 50%;
   font-size: 210%;
   padding: inherit 15px;
+  text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach),
+    0 -1px var(--peach);
+  color: black;
+}
+
+.review-card:hover p {
+  font-size: 60%;
+  font-weight: 600;
   text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach),
     0 -1px var(--peach);
   color: black;

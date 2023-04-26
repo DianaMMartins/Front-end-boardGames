@@ -1,6 +1,7 @@
 .users {
   width: 60vw;
   margin-left: 20.5%;
+  min-height: 60vh;
 }
 
 .users h2 {
@@ -20,7 +21,7 @@
   flex-wrap: wrap;
   padding-left: 0px;
   gap: 24px 16px;
-  margin: 0;
+  margin: 0 0 4vh 0;
 }
 
 .user-li {

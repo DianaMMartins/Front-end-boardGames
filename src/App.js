@@ -1,16 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Header } from "./components/Header";
-import {ReviewsPage} from "./components/Reviews/ReviewsPage";
+import { ReviewsPage } from "./components/Reviews/ReviewsPage";
 import { SingularReview } from "./components/Reviews/SingularReview";
-import { Homepage } from "./components/Homepage";
 import { Users } from "./components/users/LogInPage";
-
 import { Categories } from "./components/categories/Categories";
 import { CategoryPage } from "./components/categories/CategoryPage";
+import { Footer} from "./components/Homepage/Footer";
+import { Header} from "./components/Homepage/Header";
+import { Homepage} from "./components/Homepage/Homepage.jsx";
 
 function App() {
-
+ 
   return (
     <div className="App">
       <Header />
@@ -36,6 +36,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 }

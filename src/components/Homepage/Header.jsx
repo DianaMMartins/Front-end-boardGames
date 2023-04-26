@@ -1,5 +1,5 @@
-import { NavBar } from "./NavBar";
-import logo from "../images/friends.png";
+import { NavBar } from "../Homepage/NavBar.jsx";
+import logo from "../../images/friends.png";
 import "./Header.css";
 import { Link } from "react-router-dom";
 

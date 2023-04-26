@@ -1,6 +1,6 @@
-import { HomepageReviews } from "./Reviews/HomepageReviews";
+import { HomepageReviews } from "../Reviews/HomepageReviews";
+import { HomepageCategories } from "../categories/HomepageCategories";
 import "./Homepage.css";
-import { HomepageCategories } from "./categories/HomepageCategories";
 
 export const Homepage = () => {
   return (

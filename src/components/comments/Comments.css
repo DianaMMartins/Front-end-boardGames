@@ -3,14 +3,11 @@
 }
 
 .comments-list {
-  margin: 4vh 0;
-  padding: 0;
   display: flex;
-  gap: 4vh;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 100%;
-  color: var(--brown);
+  margin: 40px 0 0 0;
+  padding: 10px 0;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .comments h4 {
@@ -21,7 +18,14 @@
   padding: 0px 0px 24px 0px;
 }
 
-#no-comments{
-  padding-left: 32px;
-  font-size: 20px; 
+#no-comments {
+  font-size: 20px;
+  display: flex;
+  margin: 40px 0;
+  padding: 40px;
+  box-shadow: 0px 0px 4px var(--brown);
+  border-radius: 10px;
+  border: 1mm solid var(--brown);
+  background-color: whitesmoke;
+  color: var(--brown);
 }
