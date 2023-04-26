@@ -1,46 +1,35 @@
 .footer {
-  background-color: var(--peach);
+  background-color: var(--brown);
   height: -moz-fit-content;
   height: fit-content;
-  padding-bottom: 20px;
+  display: flex;
+  padding-left: 21%;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 18px;
+  align-content: center;
+  align-items: center;
 }
 
 .text-footer {
   background-color: var(--brown);
   color: var(--peach);
-  position: relative;
-  text-align: left;
-  padding: 15px 0 15px 21%;
-}
-
-.social-media {
-  display: flex;
-  align-content: center;
-  justify-content: flex-end;
-  width: 60vw;
-  margin-left: 20.5%;
+  padding: 0px 14px 0 0;
 }
 
 .link-card {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    overflow: hidden;
-    background-color: whitesmoke;
-    box-shadow: 0px 0px 4px var(--brown);
-    border-radius: 10px;
-    border: 1mm solid var(--brown);
-    margin-left: 20px;
+  position: relative;
+  width: 25px;
+  height: 25px;
 }
 
 .link-card img {
-    width: 80%;
-    object-fit: contain;
-    transition: all 0.1s ease-in-out;
-    padding: 10%;
+  width: 100%;
+  object-fit: contain;
+  transition: all 0.1s ease-in-out;
 }
 
 .link-card img:hover {
-  width: 100%;
-  padding: 0;
+  transform: scale(1.3);
+  opacity: 0.5;
 }
