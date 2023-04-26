@@ -9,6 +9,8 @@ export const NewComment = ({ review_id, setComments }) => {
   const [placeholder, setPlaceholder] = useState("Post a comment here ...");
   const { user } = useContext(UserContext);
   const [submitButton, setSubmitButton] = useState(true);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
   const commentToPost = {
     body: newComment,
     username: user,
@@ -23,16 +25,27 @@ export const NewComment = ({ review_id, setComments }) => {
       setSubmitButton(false);
       setNewComment("");
       setPlaceholder("Please sign in to leave a review!");
+      setShowErrorMessage(true);
+      setShowSuccessMessage(false);
     } else if (commentToPost.body === "") {
       setPlaceholder("Please write something to post a comment");
       setSubmitButton(true);
+      setShowErrorMessage(true);
+      setShowSuccessMessage(false);
     } else {
-      postCommentToReview(review_id, commentToPost).then(({ comment }) => {
-        setComments((currentComments) => {
-          setSubmitButton(false);
-          return [comment, ...currentComments];
+      postCommentToReview(review_id, commentToPost)
+        .then(({ comment }) => {
+          setComments((currentComments) => {
+            setSubmitButton(false);
+            setShowSuccessMessage(true);
+            setShowErrorMessage(false);
+            return [comment, ...currentComments];
+          });
+        })
+        .catch(() => {
+          setShowErrorMessage(true);
+          setShowSuccessMessage(false);
         });
-      });
       setNewComment("");
       setPlaceholder(
         "Your comment has been posted, thank you! You can only leave one review!"
@@ -40,20 +53,24 @@ export const NewComment = ({ review_id, setComments }) => {
     }
   };
 
-  
-
   return (
     <form className="post-comment" onSubmit={handleSubmit}>
       <label htmlFor="new-comment">Comment on this review: </label>
       <p>
         <textarea
-          id="new-comment"
           value={newComment}
           placeholder={placeholder}
           disabled={!submitButton}
           onChange={(event) => setNewComment(event.target.value)}
+          className={`${showSuccessMessage ? 'success' : 'new-comment'} ${showErrorMessage ? 'error' : 'new-comment'}`}
         />
       </p>
+      {showSuccessMessage && (
+        <section className="success-message">Your comment has been posted!</section>
+      )}
+      {showErrorMessage && (
+        <section className="error-message">There was an error posting your comment.</section>
+      )}
       <button type="submit" disabled={!submitButton}>
         Comment
       </button>

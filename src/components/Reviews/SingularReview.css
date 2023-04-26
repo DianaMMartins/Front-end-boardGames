@@ -73,7 +73,6 @@
   margin-top: 0;
   width: 100%;
   font-style: italic;
-  min-width: 578px;
 }
 
 .vote-button button {
@@ -97,8 +96,7 @@
 
 @media only screen and (max-width: 1320px) {
   .review-section {
-    margin: 0;
-    width: 90vw;
+    margin: 40px 0 0 0;
     height: inherit;
   }
   .img-content {
