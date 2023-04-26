@@ -89,6 +89,17 @@
   margin: 20px 0 40px 0;
 }
 
+.vote-button span {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+#heart {
+  width: 16px;
+  height: 16px;
+}
+
 .vote-button button:hover {
   box-shadow: 0px 0px 2px var(--brown);
   cursor: pointer;
@@ -103,7 +114,7 @@
     margin: 0px;
     flex-wrap: wrap;
   }
-  .img-box img{
+  .img-box img {
     width: 90%;
   }
 }
