@@ -14,20 +14,20 @@ export const NavBar = () => {
       </Link>
       <div className="divisor"></div>
       <Link to={`/categories`} className="link">
-        <p >Categories</p>
+        <p>Categories</p>
       </Link>
       <div className="divisor"></div>
       {user.username !== "" ? (
         <section className="nav-logout">
           <button className="link" onClick={logout}>
             <Link className="link" to={"/logout"}>
-              <p>Logout</p>
+              <p>Sign out</p>
             </Link>
           </button>
         </section>
       ) : (
         <Link to={`/users`} className="link">
-          <p>Log in</p>
+          <p>Sign in</p>
         </Link>
       )}
       <div className="divisor"></div>

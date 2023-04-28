@@ -2,6 +2,7 @@ import { useState } from "react";
 import { postCommentToReview } from "../../utils/apiCalls";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/Users";
+import { Link } from "react-router-dom";
 import "./NewComment.css";
 
 export const NewComment = ({ review_id, setComments }) => {
@@ -79,9 +80,21 @@ export const NewComment = ({ review_id, setComments }) => {
           {placeholder}
         </section>
       )}
-      <button type="submit" disabled={!submitButton} className={showSuccessMessage || showErrorMessage ? "disabled" : "button"}>
-        Comment
-      </button>
+      {placeholder === "Please sign in to leave a review!" ? (
+        <Link to="/users" className="button">
+          Sign In
+        </Link>
+      ) : (
+        <button
+          type="submit"
+          disabled={!submitButton}
+          className={
+            showSuccessMessage || showErrorMessage ? "disabled" : "button"
+          }
+        >
+          Comment
+        </button>
+      )}
     </form>
   );
 };

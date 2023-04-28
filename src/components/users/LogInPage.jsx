@@ -35,7 +35,7 @@ export const Users = () => {
         <LoggedIn user={matchingUser} onLogout={logout} />
       ) : (
         <section>
-          <h2>Log in</h2>
+          <h2>Sign in</h2>
           {isLoading ? (
             <img
               id="loading"

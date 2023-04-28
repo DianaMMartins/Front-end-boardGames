@@ -9,7 +9,7 @@ export const LoggedIn = memo(({ user, onLogout }) => {
       {user.username === "" ? (
         <section>
           <h3>No user logged in</h3>
-          <Link to={"/users"}>Click here to log in</Link>
+          <Link to={"/users"}>Click here to sign in</Link>
         </section>
       ) : (
         <section className="logged-user-card">
@@ -17,11 +17,11 @@ export const LoggedIn = memo(({ user, onLogout }) => {
           <section className="image">
             <img src={user.avatar_url} alt="user" />
           </section>
-            <Link to={"/logout"}>
-          <button className="logout-button" onClick={onLogout}>
-            Logout
+          <Link to={"/logout"}>
+            <button className="logout-button" onClick={onLogout}>
+              Sign out
             </button>
-            </Link>
+          </Link>
         </section>
       )}
     </section>
