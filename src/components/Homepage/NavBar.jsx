@@ -20,7 +20,7 @@ export const NavBar = () => {
       {user.username !== "" ? (
         <section className="nav-logout">
           <button className="link" onClick={logout}>
-            Log out
+            <Link to={'/logout'}>Logout</Link>
           </button>
         </section>
       ) : (

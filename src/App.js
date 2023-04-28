@@ -8,6 +8,7 @@ import { CategoryPage } from "./components/categories/CategoryPage";
 import { Footer} from "./components/Homepage/Footer";
 import { Header} from "./components/Homepage/Header";
 import { Homepage} from "./components/Homepage/Homepage.jsx";
+import { LogOut } from './components/users/LogOut';
 
 function App() {
  
@@ -19,6 +20,7 @@ function App() {
         <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/reviews/:review_id" element={<SingularReview />} />
         <Route path="/users" element={<Users />} />
+        <Route path="/logout" element={<LogOut />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/categories/:category_slug" element={<CategoryPage />} />
         <Route
