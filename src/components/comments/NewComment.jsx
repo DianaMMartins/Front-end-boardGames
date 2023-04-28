@@ -62,16 +62,24 @@ export const NewComment = ({ review_id, setComments }) => {
           placeholder={placeholder}
           disabled={!submitButton}
           onChange={(event) => setNewComment(event.target.value)}
-          className={`${showSuccessMessage ? 'success' : 'new-comment'} ${showErrorMessage ? 'error' : 'new-comment'}`}
+          className={`${showSuccessMessage ? "success" : "new-comment"} ${
+            showErrorMessage ? "error" : "new-comment"
+          }`}
         />
       </p>
       {showSuccessMessage && (
-        <section className="success-message">Your comment has been posted!</section>
+        <section className="success-message">
+          Your comment has been posted!
+        </section>
       )}
       {showErrorMessage && (
-        <section className="error-message">There was an error posting your comment.</section>
+        <section className="error-message">
+          There was an error posting your comment.
+          <br></br>
+          {placeholder}
+        </section>
       )}
-      <button type="submit" disabled={!submitButton}>
+      <button type="submit" disabled={!submitButton} className={showSuccessMessage || showErrorMessage ? "disabled" : "button"}>
         Comment
       </button>
     </form>

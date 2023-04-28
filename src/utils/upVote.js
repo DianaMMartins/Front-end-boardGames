@@ -31,7 +31,7 @@ export const UpVoteButton = ({ patchVotes, itemToPatch, component_id }) => {
       <button onClick={upVote}>
         <span aria-label="votes">
           {voteUpdated.current + " "}
-          {<img id='heart' src={like} alt="heart" />}
+          <img id='heart' src={like} alt="heart" />
         </span>
       </button>
   );

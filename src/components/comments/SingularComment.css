@@ -26,6 +26,7 @@
   font-size: 16px;
   align-items: center;
 }
+
 .comment-vote button {
   margin: 0px 10px 0 0;
   padding: 4px 14px;
@@ -42,4 +43,9 @@
 
 li {
   list-style: none;
+}
+
+.comment-vote button:hover {
+  box-shadow: 0px 0px 2px var(--brown);
+  cursor: pointer;
 }
