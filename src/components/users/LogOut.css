@@ -4,7 +4,7 @@
   min-height: 59.75vh;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 45px;
 }
@@ -42,6 +42,7 @@
   font-size: 20px;
   margin: 0;
   background: var(--brown);
+  cursor: pointer;
 }
 
 .logout-page button:hover p {

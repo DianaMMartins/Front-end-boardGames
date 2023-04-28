@@ -10,16 +10,16 @@ export const UserCard = ({ eachUser }) => {
   };
 
   return (
-    <li className="user-li" key={eachUser.name}>
+    <li key={eachUser.name}>
       <section className="login-card" onClick={handleClick}>
       
-        <section className="user-info ">
+        {/* <section className="user-info "> */}
           <h3>{eachUser.name}</h3>
 
           <section className="user-image-container">
             <img src={eachUser.avatar_url} alt="avatar" />
           </section>
-        </section>
+        {/* </section> */}
 
         <section className="button-section">
           <button className="sign-in" >

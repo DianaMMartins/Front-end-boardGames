@@ -17,11 +17,11 @@ export const LoggedIn = memo(({ user, onLogout }) => {
           <section className="image">
             <img src={user.avatar_url} alt="user" />
           </section>
-          <button className="logout-button" onClick={onLogout}>
             <Link to={"/logout"}>
-            Log out
-            </Link>
+          <button className="logout-button" onClick={onLogout}>
+            Logout
             </button>
+            </Link>
         </section>
       )}
     </section>

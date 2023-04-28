@@ -1,7 +1,7 @@
 .users {
   width: 60vw;
-  margin-left: 20.5%;
-  min-height: 60vh;
+  margin-left: 20.1%;
+  min-height: 59.75vh;
 }
 
 .users h2 {
@@ -13,24 +13,13 @@
 }
 
 .users-section {
-  align-items: baseline;
   width: inherit;
   position: relative;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  padding-left: 0px;
-  gap: 24px 16px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
   margin: 0 0 4vh 0;
-}
-
-.user-li {
-  border: 1mm solid var(--brown);
-  border-radius: 10px;
-  width: 195px;
-  height: 290px;
-  overflow: hidden;
-  background: white;
-  color: var(--brown);
-  box-shadow: 0px 0px 4px var(--brown);
+  gap: 16px;
 }
