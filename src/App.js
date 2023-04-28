@@ -13,7 +13,7 @@ import { LogOut } from './components/users/LogOut';
 function App() {
  
   return (
-    <div className="App">
+    <section className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
@@ -39,7 +39,7 @@ function App() {
         />
       </Routes>
       <Footer />
-    </div>
+    </section>
   );
 }
 
