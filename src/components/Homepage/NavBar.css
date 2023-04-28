@@ -33,9 +33,8 @@
   z-index: 10;
   font-size: 26px;
   color: var(--brown);
-  background: var(--peach);
-  padding: 12px 0px;
   font-weight: 900;
+  padding: 0;
 }
 
 .link:hover p {

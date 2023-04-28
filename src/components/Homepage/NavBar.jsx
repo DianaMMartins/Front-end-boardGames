@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import "./NavBar.css";
-import { UserContext } from '../../contexts/Users';
+import { UserContext } from "../../contexts/Users";
 
 export const NavBar = () => {
   const { user, logout } = useContext(UserContext);
@@ -10,22 +10,24 @@ export const NavBar = () => {
     <nav className="nav">
       <div className="divisor"></div>
       <Link to={`/reviews`} className="link">
-        <p id="border">Reviews</p>
+        <p>Reviews</p>
       </Link>
       <div className="divisor"></div>
       <Link to={`/categories`} className="link">
-        <p id="no-border">Categories</p>
+        <p >Categories</p>
       </Link>
       <div className="divisor"></div>
       {user.username !== "" ? (
         <section className="nav-logout">
           <button className="link" onClick={logout}>
-            <Link to={'/logout'}>Logout</Link>
+            <Link className="link" to={"/logout"}>
+              <p>Logout</p>
+            </Link>
           </button>
         </section>
       ) : (
         <Link to={`/users`} className="link">
-          <p className="link">Log in</p>
+          <p>Log in</p>
         </Link>
       )}
       <div className="divisor"></div>

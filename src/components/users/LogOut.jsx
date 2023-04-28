@@ -1,4 +1,4 @@
-import { Users } from "../users/LogInPage";
+import './LogOut.css';
 import { Link } from "react-router-dom";
 
 export const LogOut = () => {
