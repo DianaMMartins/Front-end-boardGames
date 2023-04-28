@@ -50,3 +50,9 @@ export const getCategories = () => {
     return data;
   });
 };
+
+export const patchCommentVotes = (comment_id, vote) => {
+  return boardGamesApi.patch(`/comments/${comment_id}`, {votes: vote}).then(({data}) => {
+    console.log(data);
+    return data.comment})
+}

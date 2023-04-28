@@ -73,7 +73,6 @@
   margin-top: 0;
   width: 100%;
   font-style: italic;
-  min-width: 578px;
 }
 
 .vote-button button {
@@ -90,6 +89,17 @@
   margin: 20px 0 40px 0;
 }
 
+.vote-button span {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#heart {
+  width: 16px;
+  height: 16px;
+}
+
 .vote-button button:hover {
   box-shadow: 0px 0px 2px var(--brown);
   cursor: pointer;
@@ -97,15 +107,14 @@
 
 @media only screen and (max-width: 1320px) {
   .review-section {
-    margin: 0;
-    width: 90vw;
+    margin: 40px 0 0 0;
     height: inherit;
   }
   .img-content {
     margin: 0px;
     flex-wrap: wrap;
   }
-  .img-box img{
+  .img-box img {
     width: 90%;
   }
 }

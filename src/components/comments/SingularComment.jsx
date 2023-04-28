@@ -1,7 +1,19 @@
+import { memo, useEffect, useState } from "react";
+import { patchCommentVotes } from "../../utils/apiCalls";
+import { UpVoteButton } from "../../utils/upVote";
 import "./SingularComment.css";
-import { memo } from "react";
 
 export const SingularComment = memo(({ eachComment }) => {
+  const [setCommentVotes] = useState(eachComment.votes)
+  
+  useEffect(()=>{
+    const commentId = eachComment.comment_id;
+    patchCommentVotes(commentId).then((response)=>{
+console.log(response);
+      setCommentVotes(response)
+    })
+  }, [eachComment.comment_id, setCommentVotes])
+
   return (
     <section className="comment-card">
       <li className="singular-comment">
@@ -15,8 +27,7 @@ export const SingularComment = memo(({ eachComment }) => {
         <p id="comment-body">{eachComment.body}</p>
 
         <section className="comment-vote">
-          <button>❤️</button>
-          {eachComment.votes} votes on this comment
+          <UpVoteButton patchVotes={patchCommentVotes} itemToPatch={eachComment.votes} component_id={eachComment.comment_id} />
         </section>
       </li>
     </section>
