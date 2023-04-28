@@ -22,9 +22,9 @@
   color: var(--brown);
 }
 
-.logout-page button p {
+.logout-page p {
   color: var(--brown);
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
 }
 
@@ -39,13 +39,11 @@
 }
 
 .logout-page button:hover {
-  font-size: 20px;
   margin: 0;
-  background: var(--brown);
   cursor: pointer;
+  box-shadow: 0px 0px 2px var(--brown);
 }
 
 .logout-page button:hover p {
-  color: var(--peach);
-  font-size: 20px;
+  font-size: 22px;
 }

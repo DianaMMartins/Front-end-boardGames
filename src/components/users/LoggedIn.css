@@ -51,7 +51,7 @@
   color: var(--brown);
   background: var(--peach);
   border: none;
-  font-size: 22px;
+  font-size: 18px;
   padding: 0px;
   border-radius: 10px;
   box-shadow: 0px 0px 6px var(--brown);
@@ -60,6 +60,5 @@
 .logout-button:hover {
   cursor: pointer;
   box-shadow: 0px 0px 2px var(--brown);
-  color: var(--peach);
-  background-color: var(--brown);
+  font-size: 22px;
 }
