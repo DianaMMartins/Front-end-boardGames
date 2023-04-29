@@ -6,6 +6,7 @@
   justify-content: center;
   font-family: var(--headerfont);
   padding: 0px 0px 0px 13px;
+  margin-top: 0.5vh;
 }
 
 .divisor {

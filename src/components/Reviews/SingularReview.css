@@ -1,6 +1,7 @@
 .review-page {
   width: 59.9vw;
   margin-left: 20.4%;
+  min-height: 60vh;
 }
 
 .review-section {
@@ -9,7 +10,7 @@
   box-shadow: 0px 0px 4px var(--brown);
   border-radius: 10px;
   border: 1mm solid var(--brown);
-  background-color: whitesmoke;
+  background-color: var(--white);
   color: var(--brown);
   font-size: 16px;
   position: relative;

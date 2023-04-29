@@ -1,6 +1,7 @@
 .reviews {
   width: 100%;
   margin: 0px;
+  min-height: 60vh;
 }
 
 .review-container {

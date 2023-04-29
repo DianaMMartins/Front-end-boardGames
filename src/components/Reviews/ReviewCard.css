@@ -3,7 +3,7 @@
   width: 248px;
   height: 400px;
   overflow: hidden;
-  background-color: whitesmoke;
+  background-color: var(--white);
   box-shadow: 0px 0px 4px var(--brown);
   border-radius: 10px;
   border: 1mm solid var(--brown);
@@ -67,7 +67,7 @@
     height: 450px;
     border: 4mm ridge var(--brown);
     overflow: hidden;
-    background-color: whitesmoke;
+    background-color: var(--white);
     color: black;
     text-decoration: none;
   }

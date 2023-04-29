@@ -11,10 +11,10 @@ import { Homepage} from "./components/Homepage/Homepage.jsx";
 import { LogOut } from './components/users/LogOut';
 
 function App() {
- 
   return (
     <section className="App">
       <Header />
+      <section className="body">
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/reviews" element={<ReviewsPage />} />
@@ -38,6 +38,7 @@ function App() {
           }
         />
       </Routes>
+      </section>
       <Footer />
     </section>
   );

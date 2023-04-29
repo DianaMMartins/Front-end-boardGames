@@ -1,7 +1,7 @@
 .comment-card {
   width: inherit;
   overflow: hidden;
-  background-color: whitesmoke;
+  background-color: var(--white);
   box-shadow: 0px 0px 4px var(--brown);
   border-radius: 10px;
   border: 1mm solid var(--brown);

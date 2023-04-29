@@ -26,6 +26,6 @@
   box-shadow: 0px 0px 4px var(--brown);
   border-radius: 10px;
   border: 1mm solid var(--brown);
-  background-color: whitesmoke;
+  background-color: var(--white);
   color: var(--brown);
 }

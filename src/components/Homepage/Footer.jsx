@@ -1,12 +1,10 @@
-// import { useState, useEffect } from "react";
-
-import { ScrollToTop } from "./ScrollToTop";
 import "./Footer.css";
+import { ScrollToTop } from "./ScrollToTop";
 
 export const Footer = () => {
   return (
     <footer className="footer">
-      <p className="text-footer">by Diana Martins</p>
+      <p className="text-footer">By Diana Martins</p>
       <a
         className="link-card"
         target="_blank"
@@ -15,7 +13,7 @@ export const Footer = () => {
       >
         <img
           alt="linked in link"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png"
+          src="https://www.freepnglogos.com/uploads/linkedin-logo-black-png-12.png"
         />
       </a>
       <a

@@ -1,7 +1,6 @@
 .footer {
   background-color: var(--brown);
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 60px;
   display: flex;
   padding-left: 21%;
   justify-content: flex-start;
@@ -9,11 +8,12 @@
   gap: 18px;
   align-content: center;
   align-items: center;
+  margin-top: 40px;
 }
 
 .text-footer {
   background-color: var(--brown);
-  color: var(--peach);
+  color: var(--white);
   padding: 0px 14px 0 0;
 }
 
@@ -27,6 +27,7 @@
   width: 100%;
   object-fit: contain;
   transition: all 0.1s ease-in-out;
+  filter: invert(98%);
 }
 
 .link-card img:hover {
