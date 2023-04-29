@@ -26,8 +26,6 @@
   margin: 0px;
   padding: 0px;
   position: relative;
-  text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach),
-    0 -1px var(--peach);
 }
 
 .review-section h3 {

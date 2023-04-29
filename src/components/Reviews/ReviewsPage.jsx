@@ -8,7 +8,7 @@ export const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  
+
   useEffect(() => {
     const fetchReviews = async () => {
       setIsLoading(true);
@@ -17,17 +17,16 @@ export const ReviewsPage = () => {
         setReviews(reviewsFromApi);
       } catch (error) {
         console.error(error);
-        setError("Error fetching reviews.")
+        setError("Error fetching reviews.");
       } finally {
         setIsLoading(false);
-      } 
-    }
+      }
+    };
     fetchReviews();
   }, []);
 
   return (
-    <section className="reviews">
-      <h2>Reviews</h2>
+    <section >
       {isLoading ? (
         <img
           id="loading"
@@ -35,18 +34,24 @@ export const ReviewsPage = () => {
           alt="loading"
           width="250vw"
         />
-        ) : error ? (
-          <p>{error}</p>
-        ) : (
-        <ul className="review-container">
-          {reviews.map((eachReview) => {
-            return (
-              <Link to={`/reviews/${eachReview.review_id}`} key={eachReview.review_id}>
-                <ReviewCard eachReview={eachReview} />
-              </Link>
-            );
-          })}
-        </ul>
+      ) : error ? (
+        <p>{error}</p>
+      ) : (
+        <section className="reviews">
+          <h2>Reviews</h2>
+          <ul className="review-container">
+            {reviews.map((eachReview) => {
+              return (
+                <Link
+                  to={`/reviews/${eachReview.review_id}`}
+                  key={eachReview.review_id}
+                >
+                  <ReviewCard eachReview={eachReview} />
+                </Link>
+              );
+            })}
+          </ul>
+        </section>
       )}
     </section>
   );
