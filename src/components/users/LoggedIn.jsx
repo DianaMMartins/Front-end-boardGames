@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { memo } from "react";
-// import { ConfirmLogout } from './components/users/ConfirmLogout';
 import "./LoggedIn.css";
 
 export const LoggedIn = memo(({ user }) => {

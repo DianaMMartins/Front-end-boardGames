@@ -2,11 +2,7 @@
   background-color: var(--brown);
   height: 60px;
   display: flex;
-  /* padding-left: 21%; */
   justify-content: space-between;
-  /* flex-direction: row; */
-  /* gap: 18px; */
-  /* align-content: center; */
   align-items: center;
   margin-top: 40px;
 }

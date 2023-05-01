@@ -51,8 +51,6 @@ export const NewComment = ({ review_id, setComments }) => {
     }
   };
 
-console.log(user);
-
   return (
     <section className="post-comment">
       {(user.username === '') ?
