@@ -2,41 +2,55 @@ import { useState, useEffect } from "react";
 import { getCategories } from "../../utils/apiCalls";
 import { CategoryCard } from "./CategoryCard";
 import "./Categories.css";
+import { Loading } from "../../utils/Loading";
 
 //displays all category cards that exist
 export const Categories = () => {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setIsLoading(true);
-    getCategories().then((categoriesFromApi) => {
-      setCategories(categoriesFromApi);
-      setIsLoading(false);
-    });
+    const fetchCategories = async () => {
+      setIsLoading(true);
+      try {
+        const categoriesFromApi = await getCategories();
+        setCategories(categoriesFromApi);
+      } catch (error) {
+        console.error(error);
+        setError("Error fetching categories");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchCategories();
   }, []);
 
   return (
-    <section className="categories">
-      <h3 id="categories-page-header">Categories</h3>
+    <section>
       {isLoading ? (
         <img
           id="loading"
-          src={require(`../../images/loading.gif`)}
+          src={`${process.env.PUBLIC_URL}/loading.gif`}
           alt="loading"
           width="250vw"
         />
+      ) : error ? (
+        <p>{error}</p>
       ) : (
-        <ul className="categories-list">
-          {categories.map((eachCategory) => {
-            return (
-              <CategoryCard
-                eachCategory={eachCategory}
-                key={eachCategory.slug}
-              />
-            );
-          })}
-        </ul>
+        <section className="categories">
+          <h3>Categories</h3>
+          <ul className="categories-container">
+            {categories.map((eachCategory) => {
+              return (
+                <CategoryCard
+                  eachCategory={eachCategory}
+                  key={eachCategory.slug}
+                />
+              );
+            })}
+          </ul>
+        </section>
       )}
     </section>
   );
