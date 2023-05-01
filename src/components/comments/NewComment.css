@@ -1,17 +1,31 @@
 .post-comment {
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 40px;
   box-shadow: 0px 0px 4px var(--brown);
   border-radius: 10px;
   border: 1mm solid var(--brown);
-  background-color: whitesmoke;
+  background-color: var(--white);
   color: var(--brown);
   font-size: 16px;
+  justify-content: center;
+  text-align: left;
 }
 
-.post-comment label {
-  align-self: flex-start;
+.signin-button {
+  width: 290px;
+  height: 40px;
+  padding: 10px;
+  margin: 0;
+  background: var(--peach);
+  color: var(--brown);
+  text-align: center;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px var(--brown);
+  line-height: 40px;
+  align-self: center;
 }
 
 .new-comment {
@@ -20,7 +34,6 @@
   border-radius: 10px;
   padding: 16px;
   margin: 0;
-  min-height: 60px;
   font-size: 16px;
 }
 
@@ -30,11 +43,11 @@
   color: var(--brown);
 }
 
-.post-comment .button {
+.comment-form .button {
   width: 150px;
   height: 40px;
   padding: 0;
-  margin: 26px 44% 10px 44%;
+  margin: 20px 0 10px 1%;
   background: var(--peach);
   color: var(--brown);
   text-align: center;
@@ -43,48 +56,56 @@
   border-radius: 10px;
   box-shadow: 0px 0px 5px var(--brown);
   line-height: 40px;
+  align-self: flex-start;
 }
 
-.post-comment .button:hover:not(.disabled) {
+.comment-form .button:hover:not(.disabled) {
   box-shadow: 0px 0px 2px var(--brown);
   cursor: pointer;
 }
 
 .disabled {
+  width: 150px;
+  height: 40px;
+  padding: 0;
+  margin: 20px 0 10px 1.5%;
+  background: var(--peach);
+  color: var(--brown);
+  text-align: center;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px var(--brown);
+  line-height: 40px;
+  align-self: flex-start;
   pointer-events: none;
   opacity: 0.6;
 }
 
 .success-message {
-  color: #799351;
   text-align: left;
-  padding-left: 2px;
-  margin-top: -12px;
-}
-
-.success {
+  padding-left: 22px;
+  margin-top: 0px;
   border: 1mm solid #799351;
-  background: #79935110;
+  background: #79935520;
 }
-
 .success::placeholder {
-  opacity: 0.7;
-  color: #799351;
+  opacity: 0.9;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--brown);
 }
 
 .error-message {
   color: #a20a0a;
   text-align: left;
-  padding-left: 2px;
-  margin-top: -12px;
-}
-
-.error {
+  padding-left: 22px;
+  margin-top: 0px;
   border: 1mm solid #a20a0a;
   background: #a20a0a10;
 }
 
 .error::placeholder {
-  opacity: 0.7;
+  opacity: 0.8;
   color: #a20a0a;
 }

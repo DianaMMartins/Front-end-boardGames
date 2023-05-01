@@ -17,7 +17,7 @@ export const NewComment = ({ review_id, setComments }) => {
     username: user,
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmitComment = (event) => {
     event.preventDefault();
     if (
       commentToPost.username === undefined ||
@@ -25,13 +25,12 @@ export const NewComment = ({ review_id, setComments }) => {
     ) {
       setSubmitButton(false);
       setNewComment("");
-      setPlaceholder("Please sign in to leave a review!");
       setShowErrorMessage(true);
       setShowSuccessMessage(false);
     } else if (commentToPost.body === "") {
       setPlaceholder("Please write something to post a comment");
       setSubmitButton(true);
-      setShowErrorMessage(true);
+      setShowErrorMessage(false);
       setShowSuccessMessage(false);
     } else {
       postCommentToReview(review_id, commentToPost)
@@ -48,43 +47,29 @@ export const NewComment = ({ review_id, setComments }) => {
           setShowSuccessMessage(false);
         });
       setNewComment("");
-      setPlaceholder(
-        "Your comment has been posted, thank you! You can only leave one review!"
-      );
+      setPlaceholder(commentToPost.body);
     }
   };
 
   return (
-    <form className="post-comment" onSubmit={handleSubmit}>
-      <label htmlFor="new-comment">Comment on this review: </label>
-      <p>
-        <textarea
-          value={newComment}
-          placeholder={placeholder}
-          disabled={!submitButton}
-          onChange={(event) => setNewComment(event.target.value)}
-          className={`${showSuccessMessage ? "success" : "new-comment"} ${
-            showErrorMessage ? "error" : "new-comment"
-          }`}
-        />
-      </p>
-      {showSuccessMessage && (
-        <section className="success-message">
-          Your comment has been posted!
-        </section>
-      )}
-      {showErrorMessage && (
-        <section className="error-message">
-          There was an error posting your comment.
-          <br></br>
-          {placeholder}
-        </section>
-      )}
-      {placeholder === "Please sign in to leave a review!" ? (
-        <Link to="/users" className="button">
-          Sign In
-        </Link>
-      ) : (
+    <section className="post-comment">
+      {(user.username === '') ?
+      <Link to="/users" className="signin-button">
+        Sign in to post a comment
+      </Link>
+      : <form className="comment-form" onSubmit={handleSubmitComment}>
+        <label htmlFor="new-comment"></label>
+        <p>
+          <textarea
+            value={newComment}
+            placeholder={placeholder}
+            disabled={!submitButton}
+            onChange={(event) => setNewComment(event.target.value)}
+            className={`${
+              showSuccessMessage ? "success success-message" : "new-comment"
+            } ${showErrorMessage ? "error error-message" : "new-comment"}`}
+          />
+        </p>
         <button
           type="submit"
           disabled={!submitButton}
@@ -94,7 +79,7 @@ export const NewComment = ({ review_id, setComments }) => {
         >
           Comment
         </button>
-      )}
-    </form>
+      </form>}
+    </section>
   );
 };

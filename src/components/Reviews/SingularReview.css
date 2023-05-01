@@ -9,7 +9,7 @@
   box-shadow: 0px 0px 4px var(--brown);
   border-radius: 10px;
   border: 1mm solid var(--brown);
-  background-color: whitesmoke;
+  background-color: var(--white);
   color: var(--brown);
   font-size: 16px;
   position: relative;
@@ -79,8 +79,7 @@
   background: var(--peach);
   border: none;
   font-size: 18px;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100px;
   padding: 8px 24px;
   border-radius: 10px;
   box-shadow: 0px 0px 6px var(--brown);

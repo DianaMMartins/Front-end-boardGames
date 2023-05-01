@@ -13,7 +13,7 @@
 }
 
 .login-card h3 {
-  margin: 8px;
+  margin: 0 8px;
   font-size: 24px;
   font-family: var(--mainfont);
   text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach),
@@ -21,6 +21,7 @@
   z-index: 1;
   position: relative;
   transition: all 0.1s ease-in-out;
+  padding-top: 8px;
 }
 
 .user-image-container {

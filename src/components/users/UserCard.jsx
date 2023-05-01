@@ -13,13 +13,11 @@ export const UserCard = ({ eachUser }) => {
     <li key={eachUser.name}>
       <section className="login-card" onClick={handleClick}>
       
-        {/* <section className="user-info "> */}
           <h3>{eachUser.name}</h3>
 
           <section className="user-image-container">
             <img src={eachUser.avatar_url} alt="avatar" />
           </section>
-        {/* </section> */}
 
         <section className="button-section">
           <button className="sign-in" >

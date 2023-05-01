@@ -3,7 +3,7 @@
   margin-left: 20.5%;
 }
 
-#categories-page-header {
+.categories h3 {
   font-family: var(--headerfont);
   color: var(--brown);
   font-size: 32px;
@@ -11,7 +11,7 @@
   padding: 40px 0px 24px 0px;
 }
 
-.categories-list {
+.categories-container {
   padding: 0px;
   display: flex;
   justify-content: center;
