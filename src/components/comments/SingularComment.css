@@ -22,23 +22,26 @@
 }
 
 .comment-vote {
-  display: inline-flex;
   font-size: 16px;
-  align-items: center;
 }
 
 .comment-vote button {
   margin: 0px 10px 0 0;
-  padding: 4px 14px;
+  padding: 6px 14px;
   background: var(--peach);
   color: var(--brown);
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 80px;
   font-size: 18px;
   text-align: center;
   border: none;
   border-radius: 10px;
   box-shadow: 0px 0px 6px var(--brown);
+}
+
+.comment-vote span {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
 }
 
 li {
