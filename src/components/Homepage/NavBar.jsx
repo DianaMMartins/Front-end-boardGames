@@ -19,11 +19,11 @@ export const NavBar = () => {
       <div className="divisor"></div>
       {user.username !== "" ? (
         <section className="nav-logout">
-          <button className="link" onClick={logout}>
-            <Link className="link" to={"/logout"}>
+          <Link className="link" to={"/confirm"}>
+            <button className="link">
               <p>Sign out</p>
-            </Link>
-          </button>
+            </button>
+          </Link>
         </section>
       ) : (
         <Link to={`/users`} className="link">
