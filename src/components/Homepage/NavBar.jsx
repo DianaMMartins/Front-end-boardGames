@@ -4,7 +4,7 @@ import "./NavBar.css";
 import { UserContext } from "../../contexts/Users";
 
 export const NavBar = () => {
-  const { user, logout } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   return (
     <nav className="nav">
