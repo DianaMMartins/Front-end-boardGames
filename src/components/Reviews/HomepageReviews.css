@@ -34,9 +34,11 @@
   color: var(--lightbrown);
   padding-left: 24px;
   font-family: var(--headerfont);
+  transition: all 0.1ms ease-in-out;
 }
 
 .more-reviews:hover {
   cursor: pointer;
-  font-size: 27px;
+  font-size: 22px;
+  padding-left: 22px;
 }

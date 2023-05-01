@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { memo } from "react";
+// import { ConfirmLogout } from './components/users/ConfirmLogout';
 import "./LoggedIn.css";
 
-export const LoggedIn = memo(({ user, onLogout }) => {
-  console.log(user);
+export const LoggedIn = memo(({ user }) => {
+  
   return (
     <section className="loggedIn-page">
       {user.username === "" ? (
@@ -17,8 +18,8 @@ export const LoggedIn = memo(({ user, onLogout }) => {
           <section className="image">
             <img src={user.avatar_url} alt="user" />
           </section>
-          <Link to={"/logout"}>
-            <button className="logout-button" onClick={onLogout}>
+          <Link to={"/confirm"}>
+            <button className="logout-button">
               Sign out
             </button>
           </Link>

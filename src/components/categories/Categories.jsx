@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { getCategories } from "../../utils/apiCalls";
 import { CategoryCard } from "./CategoryCard";
 import "./Categories.css";
-import { Loading } from "../../utils/Loading";
 
-//displays all category cards that exist
 export const Categories = () => {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -31,7 +29,7 @@ export const Categories = () => {
       {isLoading ? (
         <img
           id="loading"
-          src={`${process.env.PUBLIC_URL}/loading.gif`}
+          src={require(`../../images/loading.gif`)}
           alt="loading"
           width="250vw"
         />

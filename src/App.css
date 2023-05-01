@@ -37,13 +37,13 @@
   font-family: var(--mainfont);
 }
 
-.loading-page{
-  min-height: 60vh;
+.body{
+  min-height: 55.5vh;
 }
 
 #loading {
-  margin-top: 100px;
-  margin-bottom: 25.6vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 a:link {

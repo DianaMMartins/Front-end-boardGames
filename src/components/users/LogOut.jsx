@@ -8,7 +8,7 @@ export const LogOut = () => {
       <h3>See you next time!</h3>
       <Link to={`/users`}>
         <button>
-          <p>Sign in</p>
+          <p>Sign back in</p>
         </button>
       </Link>
     </section>
