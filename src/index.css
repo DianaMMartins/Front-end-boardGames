@@ -1,7 +1,8 @@
 body {
-  background-color: var(--lightmint);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    background: var(--gradientbody);
+    background-size: 50px 50px;
 }

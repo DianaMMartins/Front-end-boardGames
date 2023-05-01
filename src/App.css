@@ -32,16 +32,13 @@
       #77552220;
 }
 
-/* .body {
- background: var(--gradientbody);
-  background-size: 50px 50px;
-  padding-bottom: 1px;
-  position: absolute;
-} */
-
 .App {
   text-align: center;
   font-family: var(--mainfont);
+}
+
+.loading-page{
+  min-height: 60vh;
 }
 
 #loading {

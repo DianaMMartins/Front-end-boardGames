@@ -39,10 +39,9 @@
 }
 
 .link:hover p {
-  font-size: 26px;
   background: var(--peach);
   color: var(--brown);
-  padding: 12px 0px;
+  padding: 14px 0px;
   font-weight: 900;
  }
 
